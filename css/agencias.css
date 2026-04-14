@@ -1,0 +1,129 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+   background: #d3bebe;
+   text-align: center;
+
+  
+  }
+
+h1 {
+  margin: 20px 0;
+}
+
+/* CONTENEDOR GRID */
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px; /* 👈 espacio horizontal y vertical */
+  padding: 20px;
+  
+}
+
+/* CARD */
+.card {
+  perspective: 1000px;
+}
+
+/* INTERIOR (flip) */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* EFECTO FLIP */
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* CARAS */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  padding: 20px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FRENTE */
+.card-front {
+  background-color: #d3abd0;;
+}
+
+/* ATRÁS */
+.card-back {
+  background-color: #976991;
+  transform: rotateY(180deg);
+}
+
+/* TEXTO */
+.card h2 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+}
+
+/* ⭐ RATING */
+.rating {
+  margin-top: 10px;
+  direction: rtl;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  font-size: 25px;
+  color: gray;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* HOVER estrellas */
+.rating label:hover,
+.rating label:hover ~ label {
+  color: gold;
+}
+
+/* SELECCIÓN */
+.rating input:checked ~ label {
+  color: gold;
+}
+/* IMAGEN EN CARD */
+.card-front img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.card-front {
+  overflow: hidden;
+}
+
+.card-front img {
+  transition: transform 0.5s;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
