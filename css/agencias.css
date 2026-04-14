@@ -1,147 +1,222 @@
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #e67e22;
+    --star-color: #f1c40f;
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --transition-speed: 0.6s;
 }
 
-
+/* 2. Layout Base con Flexbox/Grid [cite: 44] */
 body {
-  font-family: Arial, sans-serif;
-   background: #d3bebe;
-   text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
 
-  
-  }
+}
 
 h1 {
-  margin: 20px 0;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
+/* Estilos del Header */
+.main-header {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
 
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: var(--accent-color);
+}
+
+/* Lógica del Mega-Menú (Dropdown) */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: var(--primary-color);
+}
+
+/* Mostrar al hacer hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 .contenedor {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px; /* 👈 espacio horizontal y vertical */
-  padding: 20px;
-  
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Diseño responsivo [cite: 44] */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-
+/* 3. Efecto Flip Card Avanzado  */
 .card {
-  perspective: 1000px;
+    background-color: transparent;
+    height: 400px;
+    perspective: 1000px; /* Necesario para el efecto 3D */
 }
-
-
 
 .card-inner {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform var(--transition-speed);
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 15px;
 }
-
 
 .card:hover .card-inner {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
-
-.card-front,
-.card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-  padding: 20px;
-  backface-visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la cara trasera al girar */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
 }
-
 
 .card-front {
-  background-color: #d3abd0;;
+    background-color: var(--card-bg);
 }
 
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
 
 .card-back {
-  background-color: #976991;
-  transform: rotateY(180deg);
+    background-color: var(--primary-color);
+    color: white;
+    transform: rotateY(180deg);
 }
 
-
-.card h2 {
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 14px;
-}
-
-
+/* 4. Sistema de Rating CSS-Only Animado [cite: 36, 62] */
 .rating {
-  margin-top: 10px;
-  direction: rtl;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 15px 0;
 }
 
-.rating input {
-  display: none;
-}
+.rating input { display: none; }
 
 .rating label {
-  font-size: 25px;
-  color: gray;
-  cursor: pointer;
-  transition: 0.3s;
+    font-size: 1.8rem;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s;
 }
 
-
+/* Micro-interacción: Escala al pasar el mouse  */
 .rating label:hover,
-.rating label:hover ~ label {
-  color: gold;
-}
-
-
+.rating label:hover ~ label,
 .rating input:checked ~ label {
-  color: gold;
+    color: var(--star-color);
+    transform: scale(1.2);
 }
 
-.card-front img {
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-.card-front {
-  overflow: hidden;
-}
-
-.card-front img {
-  transition: transform 0.5s;
+/* 5. Estilo de Botón (Micro-interacción)  */
+.btn {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-bottom: 15px;
+    transition: background 0.3s;
 }
 
-.card:hover img {
-  transform: scale(1.1);
+.btn:hover {
+    background-color: #d35400;
 }
 
 
 footer {
-    background: var(--color-primary);
-    color: rgba(0, 0, 0, 0.7);
+    background-color: var(--primary-color); /* Usando tus variables CSS */
+    color: white;
     text-align: center;
-    padding: 1.2rem;
-    font-size: 0.85rem;
-    margin-top: 3rem;
+    padding: 40px 20px;
+    margin-top: 50px; /* Espacio extra respecto a las tarjetas */
+    width: 100%;
 }
 
-
-:focus-visible {
-    outline: 3px solid var(--color-accent);
-    outline-offset: 2px;
- 
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
