@@ -6,11 +6,7 @@
     <title>Contacto - Turismo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="formulario.html">
-=======
     <link rel="stylesheet" href="formulario.css">
->>>>>>> 1bf96ad6d5d94884896c7efbd6a8be53e69ccd63
 </head>
 <body>
 
@@ -94,13 +90,30 @@
                     <div class="form-group">
                         <label for="destino">Destino de interés</label>
                         <select id="destino" name="destino" aria-label="Destino turístico de interés">
-                            <option value="" disabled selected>Seleccioná un destino</option>
-                            <option value="jujuy">Jujuy</option>
-                            <option value="salta">Salta</option>
-                            <option value="bariloche">Bariloche</option>
-                            <option value="mendoza">Mendoza</option>
+                            <option value="" disabled selected>Seleccioná una provincia</option>
                             <option value="buenosaires">Buenos Aires</option>
-                            <option value="otro">Otro</option>
+                            <option value="catamarca">Catamarca</option>
+                            <option value="chaco">Chaco</option>
+                            <option value="chubut">Chubut</option>
+                            <option value="cordoba">Córdoba</option>
+                            <option value="corrientes">Corrientes</option>
+                            <option value="entrerios">Entre Ríos</option>
+                            <option value="formosa">Formosa</option>
+                            <option value="jujuy">Jujuy</option>
+                            <option value="lapampa">La Pampa</option>
+                            <option value="larioja">La Rioja</option>
+                            <option value="mendoza">Mendoza</option>
+                            <option value="misiones">Misiones</option>
+                            <option value="neuquen">Neuquén</option>
+                            <option value="rionegro">Río Negro</option>
+                            <option value="salta">Salta</option>
+                            <option value="sanjuan">San Juan</option>
+                            <option value="sanluis">San Luis</option>
+                            <option value="santacruz">Santa Cruz</option>
+                            <option value="santafe">Santa Fe</option>
+                            <option value="santiagodelestero">Santiago del Estero</option>
+                            <option value="tierradelfuego">Tierra del Fuego</option>
+                            <option value="tucuman">Tucumán</option>
                         </select>
                     </div>
 
@@ -200,15 +213,10 @@
 
             // Simular envío (1.8 segundos)
             setTimeout(function () {
-                // Ocultar spinner y restaurar botón
                 spinner.classList.remove('activo');
                 textoBtn.textContent = 'Enviar mensaje';
                 btnEnviar.disabled = false;
-
-                // Mostrar modal de confirmación
                 modal.classList.add('activo');
-
-                // Limpiar el formulario
                 form.reset();
             }, 1800);
         });
@@ -234,4 +242,4 @@
     </script>
 
 </body>
-</html> 
+</html>
