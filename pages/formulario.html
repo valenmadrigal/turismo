@@ -10,11 +10,30 @@
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <h1>✈ Turismo Argentina</h1>
-    </header>
+    <header class="main-header">
+    <nav class="nav-container">
+        <div class="logo">
+            <h1>✈ Turismo Argentina</h1>
+        </div>
+        
+        <ul class="nav-menu">
+            <li><a href="home.html">Inicio</a></li>
+            
+            <li class="dropdown">
+                <a href="blogDestino.html" class="dropbtn">Destinos ▾</a>
+                <div class="dropdown-content">
+                    <a href="destinos.html#norte">Norte Argentino</a>
+                    <a href="destinos.html#patagonia">Patagonia</a>
+                    <a href="destinos.html#cuyo">Cuyo y Vinos</a>
+                </div>
+            </li>
 
+            <li><a href="precios.html">Precios</a></li>
+            <li><a href="agencias.html" class="active">Agencias</a></li>
+            <li><a href="formulario.html">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
     <!-- SECCIÓN CONTACTO -->
     <section class="contacto-section">
         <div class="contacto-header">
@@ -240,6 +259,8 @@
             }
         });
     </script>
-
+  <footer style="background: var(--color-primary); color: white; text-align: center; padding: 2rem; margin-top: 4rem;">
+    <p>© 2026 Turismo Argentina · Todos los derechos reservados</p>
+</footer>
 </body>
 </html>

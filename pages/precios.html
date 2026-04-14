@@ -10,10 +10,30 @@
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <h1>✈ Turismo Argentina</h1>
-    </header>
+ <header class="main-header">
+    <nav class="nav-container">
+        <div class="logo">
+            <h1>✈ Turismo Argentina</h1>
+        </div>
+        
+        <ul class="nav-menu">
+            <li><a href="home.html">Inicio</a></li>
+            
+            <li class="dropdown">
+                <a href="blogDestino.html" class="dropbtn">Destinos ▾</a>
+                <div class="dropdown-content">
+                    <a href="destinos.html#norte">Norte Argentino</a>
+                    <a href="destinos.html#patagonia">Patagonia</a>
+                    <a href="destinos.html#cuyo">Cuyo y Vinos</a>
+                </div>
+            </li>
+
+            <li><a href="precios.html">Precios</a></li>
+            <li><a href="agencias.html" class="active">Agencias</a></li>
+            <li><a href="formulario.html">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
 
     <!-- SECCIÓN PRECIOS -->
     <section class="precios-section">
