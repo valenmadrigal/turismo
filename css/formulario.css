@@ -1,0 +1,419 @@
+/* ===========================
+   VARIABLES CSS
+=========================== */
+:root {
+    --color-primary: #1a472a;
+    --color-accent: #c9a84c;
+    --color-bg: #f9f6f0;
+    --color-text: #2c2c2c;
+    --color-light: #fff;
+    --color-error: #c0392b;
+    --color-success: #1a472a;
+    --color-border: #d4c9b0;
+    --color-muted: #7a7060;
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+    --radius: 4px;
+    --transition: 0.3s ease;
+}
+
+/* ===========================
+   RESET BÁSICO
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header {
+    background: var(--color-primary);
+    padding: 1.2rem 2rem;
+    text-align: center;
+}
+
+header h1 {
+    font-family: var(--font-display);
+    color: var(--color-accent);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+/* ===========================
+   SECCIÓN PRINCIPAL
+=========================== */
+.contacto-section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+.contacto-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.contacto-header h2 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.contacto-header p {
+    color: var(--color-muted);
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* Línea decorativa debajo del título */
+.linea-decorativa {
+    width: 60px;
+    height: 3px;
+    background: var(--color-accent);
+    margin: 1rem auto;
+}
+
+/* ===========================
+   TARJETA DEL FORMULARIO
+=========================== */
+.form-card {
+    background: var(--color-light);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 3rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* ===========================
+   GRID DEL FORMULARIO
+   2 columnas en escritorio
+=========================== */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+/* Campos que ocupan toda la fila */
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+/* ===========================
+   ETIQUETAS
+=========================== */
+label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+label .requerido {
+    color: var(--color-accent);
+    margin-left: 2px;
+}
+
+/* ===========================
+   CAMPOS DE ENTRADA
+=========================== */
+input,
+select,
+textarea {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-bg);
+    color: var(--color-text);
+    transition: border-color var(--transition), box-shadow var(--transition);
+    outline: none;
+    width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(26, 71, 42, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+/* ===========================
+   VALIDACIÓN EN TIEMPO REAL
+   :valid e :invalid (CSS puro)
+=========================== */
+
+/* Campo válido → borde verde + ícono de check */
+input:not(:placeholder-shown):valid,
+textarea:not(:placeholder-shown):valid {
+    border-color: var(--color-success);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%231a472a' stroke-width='2'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 2.5rem;
+}
+
+/* Campo inválido → borde rojo + ícono de error */
+input:not(:placeholder-shown):invalid,
+textarea:not(:placeholder-shown):invalid {
+    border-color: var(--color-error);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23c0392b' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Ccircle cx='12' cy='16' r='0.5' fill='%23c0392b'%3E%3C/circle%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 2.5rem;
+}
+
+/* ===========================
+   MENSAJES DE ERROR
+=========================== */
+.mensaje-error {
+    font-size: 0.78rem;
+    color: var(--color-error);
+    display: none;
+}
+
+/* Mostrar mensaje solo cuando el campo es inválido */
+input:not(:placeholder-shown):invalid ~ .mensaje-error,
+textarea:not(:placeholder-shown):invalid ~ .mensaje-error {
+    display: block;
+}
+
+/* ===========================
+   CHECKBOX
+=========================== */
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    grid-column: 1 / -1;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    margin-top: 2px;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    font-size: 0.85rem;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--color-muted);
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.checkbox-group a {
+    color: var(--color-primary);
+}
+
+/* ===========================
+   BOTÓN ENVIAR
+=========================== */
+.btn-enviar {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+button[type="submit"] {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: var(--color-primary);
+    color: var(--color-light);
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+button[type="submit"]:hover {
+    background: #0f2d18;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(26, 71, 42, 0.25);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* ===========================
+   SPINNER CSS (animación de carga)
+=========================== */
+.spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2.5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: girar 0.7s linear infinite;
+    flex-shrink: 0;
+}
+
+@keyframes girar {
+    to { transform: rotate(360deg); }
+}
+
+/* Se activa desde JavaScript agregando la clase .activo */
+.spinner.activo {
+    display: inline-block;
+}
+
+/* ===========================
+   MODAL DE CONFIRMACIÓN
+=========================== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Se activa desde JavaScript agregando la clase .activo */
+.modal-overlay.activo {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.modal-caja {
+    background: var(--color-light);
+    border-radius: 8px;
+    padding: 3rem 2.5rem;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    animation: slideUp 0.35s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}
+
+.modal-icono {
+    width: 64px;
+    height: 64px;
+    background: #e8f5e9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.modal-icono svg {
+    width: 32px;
+    height: 32px;
+    stroke: var(--color-success);
+}
+
+.modal-caja h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    margin-bottom: 0.7rem;
+}
+
+.modal-caja p {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.8rem;
+}
+
+.btn-cerrar {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: var(--color-primary);
+    color: var(--color-light);
+    border: none;
+    padding: 0.75rem 2.5rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background var(--transition);
+}
+
+.btn-cerrar:hover {
+    background: #0f2d18;
+}
+
+/* ===========================
+   RESPONSIVO (celular)
+   1 columna en pantallas chicas
+=========================== */
+@media (max-width: 650px) {
+    .form-card {
+        padding: 2rem 1.2rem;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width,
+    .checkbox-group,
+    .btn-enviar {
+        grid-column: 1;
+    }
+
+    .contacto-header h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* ===========================
+   ACCESIBILIDAD
+   Focus visible para teclado
+=========================== */
+:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+}
