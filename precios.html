@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precios - Turismo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="precios.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>✈ Turismo Argentina</h1>
+    </header>
+
+    <!-- SECCIÓN PRECIOS -->
+    <section class="precios-section">
+
+        <div class="precios-header">
+            <h2>Comparador de Destinos</h2>
+            <div class="linea-decorativa"></div>
+            <p>Compará precios y servicios de cada provincia argentina para elegir la que más te conviene.</p>
+        </div>
+
+        <!-- TABLA DE PRECIOS -->
+        <div class="tabla-wrapper">
+            <table class="tabla-precios">
+                <thead>
+                    <tr>
+                        <th>Destino</th>
+                        <th>
+                            Precio por persona
+                            <span class="tooltip" data-tooltip="Precio estimado por persona en temporada media, sin vuelo incluido.">?</span>
+                        </th>
+                        <th>
+                            Duración
+                            <span class="tooltip" data-tooltip="Cantidad de noches recomendadas para disfrutar el destino.">?</span>
+                        </th>
+                        <th>
+                            Alojamiento
+                            <span class="tooltip" data-tooltip="Tipo de alojamiento incluido en el paquete base.">?</span>
+                        </th>
+                        <th>
+                            Traslados
+                            <span class="tooltip" data-tooltip="Incluye traslado desde el aeropuerto al hotel y viceversa.">?</span>
+                        </th>
+                        <th>
+                            Guía turístico
+                            <span class="tooltip" data-tooltip="Servicio de guía en español incluido en el paquete.">?</span>
+                        </th>
+                        <th>
+                            Comidas
+                            <span class="tooltip" data-tooltip="Indica si el desayuno o media pensión está incluido.">?</span>
+                        </th>
+                        <th>
+                            Categoría
+                            <span class="tooltip" data-tooltip="Tipo de turismo predominante en el destino.">?</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="destino-nombre">🏔️ Jujuy</td>
+                        <td class="precio">$85.000</td>
+                        <td>4 noches</td>
+                        <td>Hotel 3★</td>
+                        <td class="si">✔ Incluido</td>
+                        <td class="si">✔ Incluido</td>
+                        <td>Desayuno</td>
+                        <td><span class="badge cultural">Cultural</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🌿 Salta</td>
+                        <td class="precio">$92.000</td>
+                        <td>5 noches</td>
+                        <td>Hotel 3★</td>
+                        <td class="si">✔ Incluido</td>
+                        <td class="si">✔ Incluido</td>
+                        <td>Desayuno</td>
+                        <td><span class="badge naturaleza">Naturaleza</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🏖️ Buenos Aires</td>
+                        <td class="precio">$125.000</td>
+                        <td>5 noches</td>
+                        <td>Hotel 4★</td>
+                        <td class="si">✔ Incluido</td>
+                        <td class="no">✘ No incluido</td>
+                        <td>Desayuno</td>
+                        <td><span class="badge cultural">Cultural</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🍷 Mendoza</td>
+                        <td class="precio">$98.000</td>
+                        <td>4 noches</td>
+                        <td>Hostería</td>
+                        <td class="si">✔ Incluido</td>
+                        <td class="no">✘ No incluido</td>
+                        <td>Media pensión</td>
+                        <td><span class="badge gastronomico">Gastronómico</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">⛪ Córdoba</td>
+                        <td class="precio">$78.000</td>
+                        <td>3 noches</td>
+                        <td>Hotel 2★</td>
+                        <td class="si">✔ Incluido</td>
+                        <td class="si">✔ Incluido</td>
+                        <td>Desayuno</td>
+                        <td><span class="badge religioso">Religioso</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🌊 Bariloche (Río Negro)</td>
+                        <td class="precio">$145.000</td>
+                        <td>6 noches</td>
+                        <td>Cabaña</td>
+                        <td class="no">✘ No incluido</td>
+                        <td class="si">✔ Incluido</td>
+                        <td>Media pensión</td>
+                        <td><span class="badge naturaleza">Naturaleza</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🏖️ Mar del Plata (Bs. As.)</td>
+                        <td class="precio">$110.000</td>
+                        <td>7 noches</td>
+                        <td>Apart Hotel</td>
+                        <td class="no">✘ No incluido</td>
+                        <td class="no">✘ No incluido</td>
+                        <td>No incluido</td>
+                        <td><span class="badge playa">Sol y Playa</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🌋 Neuquén</td>
+                        <td class="precio">$105.000</td>
+                        <td>5 noches</td>
+                        <td>Hotel 3★</td>
+                        <td class="si">✔ Incluido</td>
+                        <td class="si">✔ Incluido</td>
+                        <td>Desayuno</td>
+                        <td><span class="badge naturaleza">Naturaleza</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🦭 Chubut</td>
+                        <td class="precio">$118.000</td>
+                        <td>5 noches</td>
+                        <td>Hotel 3★</td>
+                        <td class="si">✔ Incluido</td>
+                        <td class="si">✔ Incluido</td>
+                        <td>Desayuno</td>
+                        <td><span class="badge naturaleza">Naturaleza</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🐧 Santa Cruz</td>
+                        <td class="precio">$160.000</td>
+                        <td>6 noches</td>
+                        <td>Hotel 3★</td>
+                        <td class="si">✔ Incluido</td>
+                        <td class="si">✔ Incluido</td>
+                        <td>Media pensión</td>
+                        <td><span class="badge naturaleza">Naturaleza</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🏔️ Tierra del Fuego</td>
+                        <td class="precio">$185.000</td>
+                        <td>5 noches</td>
+                        <td>Hotel 4★</td>
+                        <td class="si">✔ Incluido</td>
+                        <td class="si">✔ Incluido</td>
+                        <td>Media pensión</td>
+                        <td><span class="badge naturaleza">Naturaleza</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🌿 Misiones</td>
+                        <td class="precio">$115.000</td>
+                        <td>4 noches</td>
+                        <td>Lodge</td>
+                        <td class="si">✔ Incluido</td>
+                        <td class="si">✔ Incluido</td>
+                        <td>Pensión completa</td>
+                        <td><span class="badge naturaleza">Naturaleza</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🐊 Corrientes</td>
+                        <td class="precio">$88.000</td>
+                        <td>4 noches</td>
+                        <td>Hotel 3★</td>
+                        <td class="si">✔ Incluido</td>
+                        <td class="no">✘ No incluido</td>
+                        <td>Desayuno</td>
+                        <td><span class="badge naturaleza">Naturaleza</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🌊 Entre Ríos</td>
+                        <td class="precio">$75.000</td>
+                        <td>3 noches</td>
+                        <td>Complejo termal</td>
+                        <td class="no">✘ No incluido</td>
+                        <td class="no">✘ No incluido</td>
+                        <td>No incluido</td>
+                        <td><span class="badge playa">Sol y Playa</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🌾 Santa Fe</td>
+                        <td class="precio">$70.000</td>
+                        <td>3 noches</td>
+                        <td>Hotel 2★</td>
+                        <td class="si">✔ Incluido</td>
+                        <td class="no">✘ No incluido</td>
+                        <td>Desayuno</td>
+                        <td><span class="badge cultural">Cultural</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🎭 Tucumán</td>
+                        <td class="precio">$72.000</td>
+                        <td>3 noches</td>
+                        <td>Hotel 3★</td>
+                        <td class="si">✔ Incluido</td>
+                        <td class="si">✔ Incluido</td>
+                        <td>Desayuno</td>
+                        <td><span class="badge cultural">Cultural</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🌵 Santiago del Estero</td>
+                        <td class="precio">$65.000</td>
+                        <td>3 noches</td>
+                        <td>Hotel 2★</td>
+                        <td class="si">✔ Incluido</td>
+                        <td class="no">✘ No incluido</td>
+                        <td>Desayuno</td>
+                        <td><span class="badge cultural">Cultural</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🏜️ Catamarca</td>
+                        <td class="precio">$80.000</td>
+                        <td>4 noches</td>
+                        <td>Hotel 3★</td>
+                        <td class="si">✔ Incluido</td>
+                        <td class="si">✔ Incluido</td>
+                        <td>Desayuno</td>
+                        <td><span class="badge naturaleza">Naturaleza</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🌄 La Rioja</td>
+                        <td class="precio">$82.000</td>
+                        <td>4 noches</td>
+                        <td>Hotel 3★</td>
+                        <td class="si">✔ Incluido</td>
+                        <td class="si">✔ Incluido</td>
+                        <td>Desayuno</td>
+                        <td><span class="badge naturaleza">Naturaleza</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🏔️ San Juan</td>
+                        <td class="precio">$88.000</td>
+                        <td>4 noches</td>
+                        <td>Hotel 3★</td>
+                        <td class="si">✔ Incluido</td>
+                        <td class="no">✘ No incluido</td>
+                        <td>Desayuno</td>
+                        <td><span class="badge naturaleza">Naturaleza</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🌿 San Luis</td>
+                        <td class="precio">$76.000</td>
+                        <td>3 noches</td>
+                        <td>Hostería</td>
+                        <td class="no">✘ No incluido</td>
+                        <td class="no">✘ No incluido</td>
+                        <td>Desayuno</td>
+                        <td><span class="badge naturaleza">Naturaleza</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🌾 La Pampa</td>
+                        <td class="precio">$68.000</td>
+                        <td>3 noches</td>
+                        <td>Estancia</td>
+                        <td class="no">✘ No incluido</td>
+                        <td class="si">✔ Incluido</td>
+                        <td>Pensión completa</td>
+                        <td><span class="badge gastronomico">Gastronómico</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🌊 Chaco</td>
+                        <td class="precio">$70.000</td>
+                        <td>3 noches</td>
+                        <td>Hotel 2★</td>
+                        <td class="si">✔ Incluido</td>
+                        <td class="no">✘ No incluido</td>
+                        <td>Desayuno</td>
+                        <td><span class="badge naturaleza">Naturaleza</span></td>
+                    </tr>
+                    <tr>
+                        <td class="destino-nombre">🌿 Formosa</td>
+                        <td class="precio">$72.000</td>
+                        <td>4 noches</td>
+                        <td>Lodge</td>
+                        <td class="si">✔ Incluido</td>
+                        <td class="si">✔ Incluido</td>
+                        <td>Pensión completa</td>
+                        <td><span class="badge naturaleza">Naturaleza</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- NOTA AL PIE -->
+        <p class="nota">
+            * Los precios son orientativos y pueden variar según temporada y disponibilidad. Consultá con tu agencia de viajes.
+        </p>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Turismo Argentina · Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>
