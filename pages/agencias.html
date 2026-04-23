@@ -1,192 +1,230 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agencias</title>
-    <link rel="stylesheet" href="/css/agencias.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agencias</title>
+  <link rel="stylesheet" href="../css/agencias.css">
+ 
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+
+   
 </head>
 <body>
-  <header class="main-header">
-    <nav class="nav-container">
-        <div class="logo">
-            <a href="home.html">Turismo<span>Arg</span></a>
+ 
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="logo">
+      <a href="home.html">Turismo<span>Arg</span></a>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="home.html">Inicio</a></li>
+      <li class="dropdown">
+        <a href="blogDestino.html" class="dropbtn">Destinos ▾</a>
+        <div class="dropdown-content">
+          <div class="mega-menu-grid">
+            <a href="destinos.html#norte">Norte Argentino</a>
+            <a href="destinos.html#patagonia">Patagonia</a>
+            <a href="destinos.html#cuyo">Cuyo &amp; Vinos</a>
+          </div>
         </div>
-        
-        <ul class="nav-menu">
-            <li><a href="home.html">Inicio</a></li>
-            
-            <li class="dropdown">
-                <a href="blogDestino.html" class="dropbtn">Destinos ▾</a>
-                <div class="dropdown-content">
-                    <div class="mega-menu-grid">
-                        <a href="destinos.html#norte">Norte Argentino</a>
-                        <a href="destinos.html#patagonia">Patagonia</a>
-                        <a href="destinos.html#cuyo">Cuyo & Vinos</a>
-                    </div>
-                </div>
-            </li>
-
-            <li><a href="precios.html">Precios</a></li>
-            <li><a href="agencias.html" class="active">Agencias</a></li>
-            <li><a href="formulario.html">Contacto</a></li>
-        </ul>
-    </nav>
+      </li>
+      <li><a href="precios.html">Precios</a></li>
+      <li><a href="agencias.html" class="active">Agencias</a></li>
+      <li><a href="formulario.html">Contacto</a></li>
+    </ul>
+  </nav>
 </header>
-
-    <h1>Agencias de Viajes en Argentina </h1>
-
-    <div class="contenedor">
-      
-    
-<div class="card">
-  <div class="card-inner">
-    <div class="card-front">
-        <img src="/img/jujuy.png" alt="Jujuy" class="card-image">
-      <h2>Travel Jujuy</h2>
-      <p>Especialistas en el norte</p>
-    </div>
-    <div class="card-back">
-        <a href="https://www.turismo.jujuy.gob.ar" class="btn">Ver más</a>
-      <p>📍 Jujuy</p>
-      <p>📞 388-123456</p>
-      <div class="rating">
-        <input type="radio" name="a1" id="a1-5"><label for="a1-5">★</label>
-        <input type="radio" name="a1" id="a1-4"><label for="a1-4">★</label>
-        <input type="radio" name="a1" id="a1-3"><label for="a1-3">★</label>
-        <input type="radio" name="a1" id="a1-2"><label for="a1-2">★</label>
-        <input type="radio" name="a1" id="a1-1"><label for="a1-1">★</label>
+ 
+<h1>Agencias de Viajes en Argentina</h1>
+ 
+<div class="contenedor">
+ 
+  <!-- AGENCIA 1 -->
+  <div class="agencia-card">
+    <div class="agencia-card-inner">
+      <div class="agencia-card-front">
+        <img src="../img/jujuy.png" alt="Jujuy" class="card-image">
+        <h2>Travel Jujuy</h2>
+        <p>Especialistas en el norte</p>
+      </div>
+      <div class="agencia-card-back">
+        <a href="https://www.turismo.jujuy.gob.ar" class="btn-agencia">Ver más</a>
+        <p>📍 Jujuy</p>
+        <p>📞 388-123456</p>
+        <div class="rating">
+          <input type="radio" name="a1" id="a1-5"><label for="a1-5">★</label>
+          <input type="radio" name="a1" id="a1-4"><label for="a1-4">★</label>
+          <input type="radio" name="a1" id="a1-3"><label for="a1-3">★</label>
+          <input type="radio" name="a1" id="a1-2"><label for="a1-2">★</label>
+          <input type="radio" name="a1" id="a1-1"><label for="a1-1">★</label>
+        </div>
       </div>
     </div>
   </div>
-</div>
-     
-
-<!-- AGENCIA 2 -->
-<div class="card">
-  <div class="card-inner">
-    <div class="card-front">
-        <img src="/img/cordoba.png" alt="Córdoba" class="card-image">
-      <h2>Turismo Córdoba</h2>
-      <p>Viajes a las sierras</p>
-    </div>
-    <div class="card-back">
-        <a href="https://cordobaturismo.gov.ar" class="btn">Ver más</a>
-      <p>📍 Córdoba</p>
-      <p>📞 351-987654</p>
-      <div class="rating">
-        <input type="radio" name="a2" id="a2-5"><label for="a2-5">★</label>
-        <input type="radio" name="a2" id="a2-4"><label for="a2-4">★</label>
-        <input type="radio" name="a2" id="a2-3"><label for="a2-3">★</label>
-        <input type="radio" name="a2" id="a2-2"><label for="a2-2">★</label>
-        <input type="radio" name="a2" id="a2-1"><label for="a2-1">★</label>
+ 
+  <!-- AGENCIA 2 -->
+  <div class="agencia-card">
+    <div class="agencia-card-inner">
+      <div class="agencia-card-front">
+        <img src="../img/cordoba.png" alt="Córdoba" class="card-image">
+        <h2>Turismo Córdoba</h2>
+        <p>Viajes a las sierras</p>
+      </div>
+      <div class="agencia-card-back">
+        <a href="https://cordobaturismo.gov.ar" class="btn-agencia">Ver más</a>
+        <p>📍 Córdoba</p>
+        <p>📞 351-987654</p>
+        <div class="rating">
+          <input type="radio" name="a2" id="a2-5"><label for="a2-5">★</label>
+          <input type="radio" name="a2" id="a2-4"><label for="a2-4">★</label>
+          <input type="radio" name="a2" id="a2-3"><label for="a2-3">★</label>
+          <input type="radio" name="a2" id="a2-2"><label for="a2-2">★</label>
+          <input type="radio" name="a2" id="a2-1"><label for="a2-1">★</label>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<!-- AGENCIA 3 -->
-<div class="card">
-  <div class="card-inner">
-    <div class="card-front">
-        <img src="/img/mendoza.png" alt="Mendoza" class="card-image">
-      <h2>Viajes Mendoza</h2>
-      <p>Turismo y vino</p>
-    </div>
-    <div class="card-back">
-        <a href="https://www.mendozaviajes.com" class="btn">Ver más</a>
-      <p>📍 Mendoza</p>
-      <p>📞 261-456789</p>
-      <div class="rating">
-        <input type="radio" name="a3" id="a3-5"><label for="a3-5">★</label>
-        <input type="radio" name="a3" id="a3-4"><label for="a3-4">★</label>
-        <input type="radio" name="a3" id="a3-3"><label for="a3-3">★</label>
-        <input type="radio" name="a3" id="a3-2"><label for="a3-2">★</label>
-        <input type="radio" name="a3" id="a3-1"><label for="a3-1">★</label>
+ 
+  <!-- AGENCIA 3 -->
+  <div class="agencia-card">
+    <div class="agencia-card-inner">
+      <div class="agencia-card-front">
+        <img src="../img/mendoza.png" alt="Mendoza" class="card-image">
+        <h2>Viajes Mendoza</h2>
+        <p>Turismo y vino</p>
+      </div>
+      <div class="agencia-card-back">
+        <a href="https://www.mendozaviajes.com" class="btn-agencia">Ver más</a>
+        <p>📍 Mendoza</p>
+        <p>📞 261-456789</p>
+        <div class="rating">
+          <input type="radio" name="a3" id="a3-5"><label for="a3-5">★</label>
+          <input type="radio" name="a3" id="a3-4"><label for="a3-4">★</label>
+          <input type="radio" name="a3" id="a3-3"><label for="a3-3">★</label>
+          <input type="radio" name="a3" id="a3-2"><label for="a3-2">★</label>
+          <input type="radio" name="a3" id="a3-1"><label for="a3-1">★</label>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<!-- AGENCIA 4 -->
-<div class="card">
-  <div class="card-inner">
-    <div class="card-front">
-        <img src="/img/patagonia.jpg" alt="Patagonia" class="card-image">
-      <h2>Patagonia Travel</h2>
-      <p>Aventura en el sur</p>
-    </div>
-    <div class="card-back">
-        <a href="https://www.patagoniatravel.tur.ar" class="btn">Ver más</a>
-      <p>📍 Chubut</p>
-      <p>📞 280-654321</p>
-      <div class="rating">
-        <input type="radio" name="a4" id="a4-5"><label for="a4-5">★</label>
-        <input type="radio" name="a4" id="a4-4"><label for="a4-4">★</label>
-        <input type="radio" name="a4" id="a4-3"><label for="a4-3">★</label>
-        <input type="radio" name="a4" id="a4-2"><label for="a4-2">★</label>
-        <input type="radio" name="a4" id="a4-1"><label for="a4-1">★</label>
+ 
+  <!-- AGENCIA 4 -->
+  <div class="agencia-card">
+    <div class="agencia-card-inner">
+      <div class="agencia-card-front">
+        <img src="../img/patagonia.jpg" alt="Patagonia" class="card-image">
+        <h2>Patagonia Travel</h2>
+        <p>Aventura en el sur</p>
+      </div>
+      <div class="agencia-card-back">
+        <a href="https://www.patagoniatravel.tur.ar" class="btn-agencia">Ver más</a>
+        <p>📍 Chubut</p>
+        <p>📞 280-654321</p>
+        <div class="rating">
+          <input type="radio" name="a4" id="a4-5"><label for="a4-5">★</label>
+          <input type="radio" name="a4" id="a4-4"><label for="a4-4">★</label>
+          <input type="radio" name="a4" id="a4-3"><label for="a4-3">★</label>
+          <input type="radio" name="a4" id="a4-2"><label for="a4-2">★</label>
+          <input type="radio" name="a4" id="a4-1"><label for="a4-1">★</label>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<!-- AGENCIA 5 -->
-<div class="card">
-  <div class="card-inner">
-    <div class="card-front">
-        <img src="/img/buenos aires.png" alt="Buenos Aires" class="card-image">
-      <h2>Buenos Aires Tours</h2>
-      <p>City tours y cultura</p>
-    </div>
-    <div class="card-back">
-        <a href="https://turismo.buenosaires.gob.ar" class="btn">Ver más</a>
-      <p>📍 Buenos Aires</p>
-      <p>📞 11-12345678</p>
-      <div class="rating">
-        <input type="radio" name="a5" id="a5-5"><label for="a5-5">★</label>
-        <input type="radio" name="a5" id="a5-4"><label for="a5-4">★</label>
-        <input type="radio" name="a5" id="a5-3"><label for="a5-3">★</label>
-        <input type="radio" name="a5" id="a5-2"><label for="a5-2">★</label>
-        <input type="radio" name="a5" id="a5-1"><label for="a5-1">★</label>
+ 
+  <!-- AGENCIA 5 -->
+  <div class="agencia-card">
+    <div class="agencia-card-inner">
+      <div class="agencia-card-front">
+        <img src="../img/buenos aires.png" alt="Buenos Aires" class="card-image">
+        <h2>Buenos Aires Tours</h2>
+        <p>City tours y cultura</p>
+      </div>
+      <div class="agencia-card-back">
+        <a href="https://turismo.buenosaires.gob.ar" class="btn-agencia">Ver más</a>
+        <p>📍 Buenos Aires</p>
+        <p>📞 11-12345678</p>
+        <div class="rating">
+          <input type="radio" name="a5" id="a5-5"><label for="a5-5">★</label>
+          <input type="radio" name="a5" id="a5-4"><label for="a5-4">★</label>
+          <input type="radio" name="a5" id="a5-3"><label for="a5-3">★</label>
+          <input type="radio" name="a5" id="a5-2"><label for="a5-2">★</label>
+          <input type="radio" name="a5" id="a5-1"><label for="a5-1">★</label>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<!-- AGENCIA 6 -->
-<div class="card">
-  <div class="card-inner">
-    <div class="card-front">
-        <img src="/img/salta.png" alt="Salta" class="card-image">
-      <h2>Norte Travel</h2>
-      <p>Salta </p>
-    </div>
-    <div class="card-back">
-        <a href="https://visitsalta.ar" class="btn">Ver más</a>
-      <p>📍 Salta</p>
-      <p>📞 387-222333</p>
-      <div class="rating">
-        <input type="radio" name="a6" id="a6-5"><label for="a6-5">★</label>
-        <input type="radio" name="a6" id="a6-4"><label for="a6-4">★</label>
-        <input type="radio" name="a6" id="a6-3"><label for="a6-3">★</label>
-        <input type="radio" name="a6" id="a6-2"><label for="a6-2">★</label>
-        <input type="radio" name="a6" id="a6-1"><label for="a6-1">★</label>
-
+ 
+  <!-- AGENCIA 6 -->
+  <div class="agencia-card">
+    <div class="agencia-card-inner">
+      <div class="agencia-card-front">
+        <img src="../img/salta.png" alt="Salta" class="card-image">
+        <h2>Norte Travel</h2>
+        <p>Salta</p>
+      </div>
+      <div class="agencia-card-back">
+        <a href="https://visitsalta.ar" class="btn-agencia">Ver más</a>
+        <p>📍 Salta</p>
+        <p>📞 387-222333</p>
+        <div class="rating">
+          <input type="radio" name="a6" id="a6-5"><label for="a6-5">★</label>
+          <input type="radio" name="a6" id="a6-4"><label for="a6-4">★</label>
+          <input type="radio" name="a6" id="a6-3"><label for="a6-3">★</label>
+          <input type="radio" name="a6" id="a6-2"><label for="a6-2">★</label>
+          <input type="radio" name="a6" id="a6-1"><label for="a6-1">★</label>
+        </div>
       </div>
     </div>
   </div>
+ 
 </div>
-
-    </div>
-
-
-
-    <footer>
-        <p>© 2026 Turismo Argentina · Todos los derechos reservados</p>
-    </footer>
-
+ 
+<footer>
+  <p>© 2026 Turismo Argentina · Todos los derechos reservados</p>
+</footer>
+ 
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+ 
+<script>
+$(function () {
+ 
+  /* FLIP con jQuery toggle */
+  $('.agencia-card').on('click', function (e) {
+    if ($(e.target).hasClass('btn-agencia') || $(e.target).closest('.btn-agencia').length) return;
+    $(this).toggleClass('flipped');
+  });
+ 
+  /* RATING hover + click */
+  $('.rating label').on('mouseenter', function () {
+    var $rating = $(this).closest('.rating');
+    $rating.find('label').css({ color: '#555', transform: 'scale(1)' });
+    $(this).css({ color: 'var(--star-color)', transform: 'scale(1.2)' });
+    $(this).nextAll('label').css({ color: 'var(--star-color)', transform: 'scale(1.2)' });
+  });
+ 
+  $('.rating').on('mouseleave', function () {
+    var $rating  = $(this);
+    var $checked = $rating.find('input:checked');
+    $rating.find('label').css({ color: '#555', transform: 'scale(1)' });
+    if ($checked.length) {
+      $checked.next('label').css({ color: 'var(--star-color)', transform: 'scale(1.2)' })
+              .nextAll('label').css({ color: 'var(--star-color)', transform: 'scale(1.2)' });
+    }
+  });
+ 
+  $('.rating label').on('click', function () {
+    $('#' + $(this).attr('for')).prop('checked', true);
+  });
+ 
+});
+</script>
  
 </body>
 </html>
+ 
