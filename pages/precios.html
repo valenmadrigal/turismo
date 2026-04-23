@@ -1,341 +1,411 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precios - Turismo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/precios.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Precios | TurJuy</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+
 </head>
 <body>
 
- <header class="main-header">
-    <nav class="nav-container">
-        <div class="logo">
-            <h1>✈ Turismo Argentina</h1>
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <i class="bi bi-compass me-1"></i>TurJuy
+    </a>
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navMenu"
+            aria-controls="navMenu" aria-expanded="false" aria-label="Menú">
+      <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Destinos</a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="#">Quebrada de Humahuaca</a></li>
+            <li><a class="dropdown-item" href="#">Salinas Grandes</a></li>
+            <li><a class="dropdown-item" href="#">Yungas</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#">Agencias</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Precios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<section class="hero-precios">
+  <div class="container">
+    <h1><i class="bi bi-tags-fill me-2"></i>Planes y Precios</h1>
+    <p class="mt-2">Elegí el paquete que mejor se adapte a tu viaje por Jujuy.</p>
+
+    <div class="toggle-wrap">
+      <span class="toggle-label">Mensual</span>
+      <div class="form-check form-switch mb-0">
+        <input class="form-check-input" type="checkbox" id="toggleAnual" role="switch">
+      </div>
+      <span class="toggle-label">Anual &nbsp;<span class="badge-ahorro">-20%</span></span>
+    </div>
+  </div>
+</section>
+
+
+<section class="precios-section">
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+
+      <!-- Plan Básico -->
+      <div class="col-lg-4 col-md-6 fade-in">
+        <div class="plan-card">
+          <div class="plan-icon">
+            <span class="sprite-plan sprite-basico" title="Plan Básico"></span>
+          </div>
+          <h3 class="plan-nombre">Básico</h3>
+          <p class="plan-desc">Para el viajero independiente que quiere lo esencial.</p>
+          <div class="plan-precio">
+            <sup>$</sup><span class="precio-num" data-mensual="12000" data-anual="9600">12.000</span>
+            <span class="periodo"> / persona</span>
+          </div>
+
+          <ul class="plan-lista">
+            <li><i class="bi bi-check-circle-fill ok"></i> Traslado aeropuerto</li>
+            <li><i class="bi bi-check-circle-fill ok"></i> 2 excursiones incluidas</li>
+            <li><i class="bi bi-check-circle-fill ok"></i> Guía local</li>
+            <li class="off"><i class="bi bi-x-circle-fill no"></i> Alojamiento</li>
+            <li class="off"><i class="bi bi-x-circle-fill no"></i> Seguro viajero premium</li>
+            <li class="off"><i class="bi bi-x-circle-fill no"></i> Atención 24/7</li>
+          </ul>
+
+          <button class="btn-plan btn-plan-verde" data-bs-toggle="tooltip"
+                  data-bs-placement="top" title="Ideal para viajeros individuales">
+            <i class="bi bi-arrow-right-circle me-1"></i>Elegir Básico
+          </button>
         </div>
-        
-        <ul class="nav-menu">
-            <li><a href="home.html">Inicio</a></li>
-            
-            <li class="dropdown">
-                <a href="blogDestino.html" class="dropbtn">Destinos ▾</a>
-                <div class="dropdown-content">
-                    <a href="destinos.html#norte">Norte Argentino</a>
-                    <a href="destinos.html#patagonia">Patagonia</a>
-                    <a href="destinos.html#cuyo">Cuyo y Vinos</a>
-                </div>
-            </li>
+      </div>
 
-            <li><a href="precios.html">Precios</a></li>
-            <li><a href="agencias.html" class="active">Agencias</a></li>
-            <li><a href="formulario.html">Contacto</a></li>
-        </ul>
-    </nav>
-</header>
+      <!-- Plan Premium (DESTACADO) -->
+      <div class="col-lg-4 col-md-6 fade-in" style="transition-delay:.1s">
+        <div class="plan-card destacado">
+          <span class="badge-pop"><i class="bi bi-star-fill me-1"></i>Más elegido</span>
+          <div class="plan-icon">
+            <span class="sprite-plan sprite-premium" title="Plan Premium"></span>
+          </div>
+          <h3 class="plan-nombre" style="color:var(--miel)">Premium</h3>
+          <p class="plan-desc">La experiencia completa con alojamiento y todas las excursiones.</p>
+          <div class="plan-precio">
+            <sup>$</sup><span class="precio-num" data-mensual="28000" data-anual="22400">28.000</span>
+            <span class="periodo"> / persona</span>
+          </div>
 
-    <!-- SECCIÓN PRECIOS -->
-    <section class="precios-section">
+          <ul class="plan-lista">
+            <li><i class="bi bi-check-circle-fill ok"></i> Traslado aeropuerto</li>
+            <li><i class="bi bi-check-circle-fill ok"></i> Excursiones ilimitadas</li>
+            <li><i class="bi bi-check-circle-fill ok"></i> Guía local especializado</li>
+            <li><i class="bi bi-check-circle-fill ok"></i> 3 noches de alojamiento</li>
+            <li><i class="bi bi-check-circle-fill ok"></i> Seguro viajero premium</li>
+            <li class="off"><i class="bi bi-x-circle-fill no"></i> Atención 24/7</li>
+          </ul>
 
-        <div class="precios-header">
-            <h2>Comparador de Destinos</h2>
-            <div class="linea-decorativa"></div>
-            <p>Compará precios y servicios de cada provincia argentina para elegir la que más te conviene.</p>
+          <button class="btn-plan btn-plan-miel" data-bs-toggle="tooltip"
+                  data-bs-placement="top" title="El paquete más popular de la temporada">
+            <i class="bi bi-star me-1"></i>Elegir Premium
+          </button>
         </div>
+      </div>
 
-        <!-- TABLA DE PRECIOS -->
-        <div class="tabla-wrapper">
-            <table class="tabla-precios">
-                <thead>
-                    <tr>
-                        <th>Destino</th>
-                        <th>
-                            Precio por persona
-                            <span class="tooltip" data-tooltip="Precio estimado por persona en temporada media, sin vuelo incluido.">?</span>
-                        </th>
-                        <th>
-                            Duración
-                            <span class="tooltip" data-tooltip="Cantidad de noches recomendadas para disfrutar el destino.">?</span>
-                        </th>
-                        <th>
-                            Alojamiento
-                            <span class="tooltip" data-tooltip="Tipo de alojamiento incluido en el paquete base.">?</span>
-                        </th>
-                        <th>
-                            Traslados
-                            <span class="tooltip" data-tooltip="Incluye traslado desde el aeropuerto al hotel y viceversa.">?</span>
-                        </th>
-                        <th>
-                            Guía turístico
-                            <span class="tooltip" data-tooltip="Servicio de guía en español incluido en el paquete.">?</span>
-                        </th>
-                        <th>
-                            Comidas
-                            <span class="tooltip" data-tooltip="Indica si el desayuno o media pensión está incluido.">?</span>
-                        </th>
-                        <th>
-                            Categoría
-                            <span class="tooltip" data-tooltip="Tipo de turismo predominante en el destino.">?</span>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="destino-nombre">🏔️ Jujuy</td>
-                        <td class="precio">$85.000</td>
-                        <td>4 noches</td>
-                        <td>Hotel 3★</td>
-                        <td class="si">✔ Incluido</td>
-                        <td class="si">✔ Incluido</td>
-                        <td>Desayuno</td>
-                        <td><span class="badge cultural">Cultural</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🌿 Salta</td>
-                        <td class="precio">$92.000</td>
-                        <td>5 noches</td>
-                        <td>Hotel 3★</td>
-                        <td class="si">✔ Incluido</td>
-                        <td class="si">✔ Incluido</td>
-                        <td>Desayuno</td>
-                        <td><span class="badge naturaleza">Naturaleza</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🏖️ Buenos Aires</td>
-                        <td class="precio">$125.000</td>
-                        <td>5 noches</td>
-                        <td>Hotel 4★</td>
-                        <td class="si">✔ Incluido</td>
-                        <td class="no">✘ No incluido</td>
-                        <td>Desayuno</td>
-                        <td><span class="badge cultural">Cultural</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🍷 Mendoza</td>
-                        <td class="precio">$98.000</td>
-                        <td>4 noches</td>
-                        <td>Hostería</td>
-                        <td class="si">✔ Incluido</td>
-                        <td class="no">✘ No incluido</td>
-                        <td>Media pensión</td>
-                        <td><span class="badge gastronomico">Gastronómico</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">⛪ Córdoba</td>
-                        <td class="precio">$78.000</td>
-                        <td>3 noches</td>
-                        <td>Hotel 2★</td>
-                        <td class="si">✔ Incluido</td>
-                        <td class="si">✔ Incluido</td>
-                        <td>Desayuno</td>
-                        <td><span class="badge religioso">Religioso</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🌊 Bariloche (Río Negro)</td>
-                        <td class="precio">$145.000</td>
-                        <td>6 noches</td>
-                        <td>Cabaña</td>
-                        <td class="no">✘ No incluido</td>
-                        <td class="si">✔ Incluido</td>
-                        <td>Media pensión</td>
-                        <td><span class="badge naturaleza">Naturaleza</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🏖️ Mar del Plata (Bs. As.)</td>
-                        <td class="precio">$110.000</td>
-                        <td>7 noches</td>
-                        <td>Apart Hotel</td>
-                        <td class="no">✘ No incluido</td>
-                        <td class="no">✘ No incluido</td>
-                        <td>No incluido</td>
-                        <td><span class="badge playa">Sol y Playa</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🌋 Neuquén</td>
-                        <td class="precio">$105.000</td>
-                        <td>5 noches</td>
-                        <td>Hotel 3★</td>
-                        <td class="si">✔ Incluido</td>
-                        <td class="si">✔ Incluido</td>
-                        <td>Desayuno</td>
-                        <td><span class="badge naturaleza">Naturaleza</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🦭 Chubut</td>
-                        <td class="precio">$118.000</td>
-                        <td>5 noches</td>
-                        <td>Hotel 3★</td>
-                        <td class="si">✔ Incluido</td>
-                        <td class="si">✔ Incluido</td>
-                        <td>Desayuno</td>
-                        <td><span class="badge naturaleza">Naturaleza</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🐧 Santa Cruz</td>
-                        <td class="precio">$160.000</td>
-                        <td>6 noches</td>
-                        <td>Hotel 3★</td>
-                        <td class="si">✔ Incluido</td>
-                        <td class="si">✔ Incluido</td>
-                        <td>Media pensión</td>
-                        <td><span class="badge naturaleza">Naturaleza</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🏔️ Tierra del Fuego</td>
-                        <td class="precio">$185.000</td>
-                        <td>5 noches</td>
-                        <td>Hotel 4★</td>
-                        <td class="si">✔ Incluido</td>
-                        <td class="si">✔ Incluido</td>
-                        <td>Media pensión</td>
-                        <td><span class="badge naturaleza">Naturaleza</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🌿 Misiones</td>
-                        <td class="precio">$115.000</td>
-                        <td>4 noches</td>
-                        <td>Lodge</td>
-                        <td class="si">✔ Incluido</td>
-                        <td class="si">✔ Incluido</td>
-                        <td>Pensión completa</td>
-                        <td><span class="badge naturaleza">Naturaleza</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🐊 Corrientes</td>
-                        <td class="precio">$88.000</td>
-                        <td>4 noches</td>
-                        <td>Hotel 3★</td>
-                        <td class="si">✔ Incluido</td>
-                        <td class="no">✘ No incluido</td>
-                        <td>Desayuno</td>
-                        <td><span class="badge naturaleza">Naturaleza</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🌊 Entre Ríos</td>
-                        <td class="precio">$75.000</td>
-                        <td>3 noches</td>
-                        <td>Complejo termal</td>
-                        <td class="no">✘ No incluido</td>
-                        <td class="no">✘ No incluido</td>
-                        <td>No incluido</td>
-                        <td><span class="badge playa">Sol y Playa</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🌾 Santa Fe</td>
-                        <td class="precio">$70.000</td>
-                        <td>3 noches</td>
-                        <td>Hotel 2★</td>
-                        <td class="si">✔ Incluido</td>
-                        <td class="no">✘ No incluido</td>
-                        <td>Desayuno</td>
-                        <td><span class="badge cultural">Cultural</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🎭 Tucumán</td>
-                        <td class="precio">$72.000</td>
-                        <td>3 noches</td>
-                        <td>Hotel 3★</td>
-                        <td class="si">✔ Incluido</td>
-                        <td class="si">✔ Incluido</td>
-                        <td>Desayuno</td>
-                        <td><span class="badge cultural">Cultural</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🌵 Santiago del Estero</td>
-                        <td class="precio">$65.000</td>
-                        <td>3 noches</td>
-                        <td>Hotel 2★</td>
-                        <td class="si">✔ Incluido</td>
-                        <td class="no">✘ No incluido</td>
-                        <td>Desayuno</td>
-                        <td><span class="badge cultural">Cultural</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🏜️ Catamarca</td>
-                        <td class="precio">$80.000</td>
-                        <td>4 noches</td>
-                        <td>Hotel 3★</td>
-                        <td class="si">✔ Incluido</td>
-                        <td class="si">✔ Incluido</td>
-                        <td>Desayuno</td>
-                        <td><span class="badge naturaleza">Naturaleza</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🌄 La Rioja</td>
-                        <td class="precio">$82.000</td>
-                        <td>4 noches</td>
-                        <td>Hotel 3★</td>
-                        <td class="si">✔ Incluido</td>
-                        <td class="si">✔ Incluido</td>
-                        <td>Desayuno</td>
-                        <td><span class="badge naturaleza">Naturaleza</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🏔️ San Juan</td>
-                        <td class="precio">$88.000</td>
-                        <td>4 noches</td>
-                        <td>Hotel 3★</td>
-                        <td class="si">✔ Incluido</td>
-                        <td class="no">✘ No incluido</td>
-                        <td>Desayuno</td>
-                        <td><span class="badge naturaleza">Naturaleza</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🌿 San Luis</td>
-                        <td class="precio">$76.000</td>
-                        <td>3 noches</td>
-                        <td>Hostería</td>
-                        <td class="no">✘ No incluido</td>
-                        <td class="no">✘ No incluido</td>
-                        <td>Desayuno</td>
-                        <td><span class="badge naturaleza">Naturaleza</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🌾 La Pampa</td>
-                        <td class="precio">$68.000</td>
-                        <td>3 noches</td>
-                        <td>Estancia</td>
-                        <td class="no">✘ No incluido</td>
-                        <td class="si">✔ Incluido</td>
-                        <td>Pensión completa</td>
-                        <td><span class="badge gastronomico">Gastronómico</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🌊 Chaco</td>
-                        <td class="precio">$70.000</td>
-                        <td>3 noches</td>
-                        <td>Hotel 2★</td>
-                        <td class="si">✔ Incluido</td>
-                        <td class="no">✘ No incluido</td>
-                        <td>Desayuno</td>
-                        <td><span class="badge naturaleza">Naturaleza</span></td>
-                    </tr>
-                    <tr>
-                        <td class="destino-nombre">🌿 Formosa</td>
-                        <td class="precio">$72.000</td>
-                        <td>4 noches</td>
-                        <td>Lodge</td>
-                        <td class="si">✔ Incluido</td>
-                        <td class="si">✔ Incluido</td>
-                        <td>Pensión completa</td>
-                        <td><span class="badge naturaleza">Naturaleza</span></td>
-                    </tr>
-                </tbody>
-            </table>
+      <!-- Plan Élite -->
+      <div class="col-lg-4 col-md-6 fade-in" style="transition-delay:.2s">
+        <div class="plan-card">
+          <div class="plan-icon">
+            <span class="sprite-plan sprite-elite" title="Plan Élite"></span>
+          </div>
+          <h3 class="plan-nombre" style="color:var(--oscuro)">Élite</h3>
+          <p class="plan-desc">Lujo, exclusividad y atención personalizada todo incluido.</p>
+          <div class="plan-precio">
+            <sup>$</sup><span class="precio-num" data-mensual="55000" data-anual="44000">55.000</span>
+            <span class="periodo"> / persona</span>
+          </div>
+
+          <ul class="plan-lista">
+            <li><i class="bi bi-check-circle-fill ok"></i> Traslado aeropuerto VIP</li>
+            <li><i class="bi bi-check-circle-fill ok"></i> Excursiones ilimitadas</li>
+            <li><i class="bi bi-check-circle-fill ok"></i> Guía privado exclusivo</li>
+            <li><i class="bi bi-check-circle-fill ok"></i> 5 noches hotel boutique</li>
+            <li><i class="bi bi-check-circle-fill ok"></i> Seguro viajero premium</li>
+            <li><i class="bi bi-check-circle-fill ok"></i> Atención 24/7 dedicada</li>
+          </ul>
+
+          <button class="btn-plan btn-plan-dark" data-bs-toggle="tooltip"
+                  data-bs-placement="top" title="Experiencia exclusiva para grupos privados">
+            <i class="bi bi-gem me-1"></i>Elegir Élite
+          </button>
         </div>
+      </div>
 
-        <!-- NOTA AL PIE -->
-        <p class="nota">
-            * Los precios son orientativos y pueden variar según temporada y disponibilidad. Consultá con tu agencia de viajes.
-        </p>
+    </div><!-- /row -->
+  </div><!-- /container -->
+</section>
 
-    </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 Turismo Argentina · Todos los derechos reservados</p>
-    </footer>
+<section class="tabla-section">
+  <div class="container fade-in">
+    <h2 class="text-center mb-4"><i class="bi bi-table me-2"></i>Comparativa de planes</h2>
+
+    <div class="table-responsive">
+      <table class="table-precios table table-bordered">
+        <thead>
+          <tr>
+            <th style="width:34%">Características</th>
+            <th>Básico</th>
+            <th class="col-miel">Premium</th>
+            <th>Élite</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Traslado desde/hacia el aeropuerto de Jujuy">
+                Traslado aeropuerto
+              </span>
+            </td>
+            <td><i class="bi bi-check-circle-fill check"></i></td>
+            <td><i class="bi bi-check-circle-fill check"></i></td>
+            <td><i class="bi bi-check-circle-fill check"></i> VIP</td>
+          </tr>
+          <tr>
+            <td>
+              <span data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Número de excursiones disponibles durante el paquete">
+                Excursiones incluidas
+              </span>
+            </td>
+            <td>2 excursiones</td>
+            <td>Ilimitadas</td>
+            <td>Ilimitadas</td>
+          </tr>
+          <tr>
+            <td>
+              <span data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Tipo de guía asignado durante el viaje">
+                Guía turístico
+              </span>
+            </td>
+            <td>Local</td>
+            <td>Especializado</td>
+            <td>Privado exclusivo</td>
+          </tr>
+          <tr>
+            <td>
+              <span data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Alojamiento incluido en el paquete">
+                Alojamiento
+              </span>
+            </td>
+            <td><i class="bi bi-x-circle-fill cross"></i></td>
+            <td>3 noches</td>
+            <td>5 noches boutique</td>
+          </tr>
+          <tr>
+            <td>
+              <span data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Cobertura médica y de accidentes durante el viaje">
+                Seguro viajero premium
+              </span>
+            </td>
+            <td><i class="bi bi-x-circle-fill cross"></i></td>
+            <td><i class="bi bi-check-circle-fill check"></i></td>
+            <td><i class="bi bi-check-circle-fill check"></i></td>
+          </tr>
+          <tr>
+            <td>
+              <span data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Línea de atención al viajero disponible las 24 horas">
+                Atención 24/7
+              </span>
+            </td>
+            <td><i class="bi bi-x-circle-fill cross"></i></td>
+            <td><i class="bi bi-x-circle-fill cross"></i></td>
+            <td><i class="bi bi-check-circle-fill check"></i></td>
+          </tr>
+          <tr>
+            <td>
+              <span data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Precio por persona en pesos argentinos (plan mensual)">
+                Precio / persona
+              </span>
+            </td>
+            <td><strong>$12.000</strong></td>
+            <td style="background:#fdf6e3"><strong>$28.000</strong></td>
+            <td><strong>$55.000</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- /table-responsive -->
+
+    <p class="text-center mt-3" style="color:#888; font-size:.85rem">
+      <i class="bi bi-info-circle me-1"></i>
+      Precios en pesos argentinos. Pasá el cursor sobre cada característica para más detalle.
+    </p>
+  </div>
+</section>
+
+
+<section class="faq-section">
+  <div class="container fade-in">
+    <h2 class="text-center mb-4"><i class="bi bi-question-circle me-2"></i>Preguntas frecuentes</h2>
+    <div class="accordion" id="faqAcc">
+
+      <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq1">
+            ¿Puedo cambiar de plan después de contratar?
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+          <div class="accordion-body">
+            Sí. Podés hacer upgrade a un plan superior en cualquier momento, abonando solo la diferencia. Los cambios a un plan inferior están sujetos a disponibilidad y a las condiciones de cancelación vigentes.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq2">
+            ¿Los precios incluyen impuestos?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+          <div class="accordion-body">
+            Todos los precios mostrados son finales e incluyen IVA. No hay cargos ocultos.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq3">
+            ¿Qué pasa si necesito cancelar mi viaje?
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+          <div class="accordion-body">
+            Las cancelaciones con más de 15 días de anticipación reciben el 100% del reembolso. Entre 7 y 14 días, el 50%. Menos de 7 días, el reembolso no aplica salvo causas de fuerza mayor debidamente documentadas.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item border-0 rounded-3 overflow-hidden shadow-sm">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq4">
+            ¿Hay descuentos para grupos o estudiantes?
+          </button>
+        </h2>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+          <div class="accordion-body">
+            Sí. Grupos de más de 10 personas tienen un 15% de descuento adicional. Estudiantes con credencial universitaria vigente obtienen un 10% en cualquier plan. Contactanos para coordinar.
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /accordion -->
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p class="mb-1" style="color:var(--miel); font-family:'Playfair Display',serif; font-size:1.2rem">TurJuy</p>
+    <p class="mb-0" style="font-size:.85rem">Av. Bolivia 1239 · San Salvador de Jujuy · Argentina</p>
+    <hr class="divider">
+    <p class="mb-0" style="font-size:.8rem">
+      &copy; 2026 TurJuy. Todos los derechos reservados. |
+      <a href="#">Privacidad</a> | <a href="#">Términos</a>
+    </p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+$(function () {
+
+ 
+  $('[data-bs-toggle="tooltip"]').each(function () {
+    new bootstrap.Tooltip(this, { trigger: 'hover focus' });
+  });
+
+ 
+  $('#toggleAnual').on('change', function () {
+    var anual = $(this).is(':checked');
+
+    $('.precio-num').addClass('actualizando');
+
+    setTimeout(function () {
+      $('.precio-num').each(function () {
+        var val = anual
+          ? parseInt($(this).data('anual'))
+          : parseInt($(this).data('mensual'));
+        $(this).text(val.toLocaleString('es-AR'));
+      });
+      $('.precio-num').removeClass('actualizando');
+    }, 250);
+  });
+
+
+  $('.table-precios tbody tr').on('mouseenter', function () {
+    $(this).find('td').css('background', '#f0f7f3');
+  }).on('mouseleave', function () {
+    $(this).find('td').css('background', '');
+    $(this).find('td:nth-child(3)').css('background', '');
+  });
+
+  $('.table-precios thead th').on('mouseenter', function () {
+    var idx = $(this).index() + 1; // nth-child es 1-based
+    $('.table-precios tbody tr td:nth-child(' + idx + ')').css({
+      'background': '#e8f5e9', 'transition': 'background .2s'
+    });
+  }).on('mouseleave', function () {
+    $('.table-precios tbody td').css('background', '');
+  });
+
+  $('.btn-plan').on('click', function () {
+    var $btn = $(this);
+    var original = $btn.html();
+    $btn.html('<i class="bi bi-hourglass-split me-1"></i>Procesando…').prop('disabled', true);
+    setTimeout(function () {
+      $btn.html('<i class="bi bi-check2-circle me-1"></i>¡Plan seleccionado!');
+      setTimeout(function () {
+        $btn.html(original).prop('disabled', false);
+      }, 2000);
+    }, 1000);
+  });
+
+  function checkVisible() {
+    $('.fade-in').each(function () {
+      var top = $(this).offset().top;
+      var win = $(window).scrollTop() + $(window).height();
+      if (win > top + 60) $(this).addClass('visible');
+    });
+  }
+  $(window).on('scroll', checkVisible);
+  checkVisible();
+
+});
+</script>
 
 </body>
 </html>

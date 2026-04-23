@@ -1,388 +1,156 @@
-/* ===========================
-   VARIABLES CSS
-=========================== */
-:root {
-    --color-primary: #1a472a;
-    --color-accent: #c9a84c;
-    --color-bg: #f9f6f0;
-    --color-text: #2c2c2c;
-    --color-light: #fff;
-    --color-border: #d4c9b0;
-    --color-muted: #7a7060;
-    --color-hover: #edf7f0;
-    --color-si: #1a472a;
-    --color-no: #c0392b;
-    --font-display: 'Playfair Display', serif;
-    --font-body: 'DM Sans', sans-serif;
-    --transition: 0.3s ease;
-}
+    :root {
+      --verde:  #2d6a4f;
+      --verde2: #40916c;
+      --miel:   #d4a94a;
+      --oscuro: #111614;
+      --gris:   #f4f6f0;
+      --texto:  #222;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: 'Lato', sans-serif; background: var(--gris); color: var(--texto); margin: 0; }
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; }
 
-/* ===========================
-   RESET BÁSICO
-=========================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+ 
+    .sprite-plan {
+      display: inline-block;
+      width: 40px; height: 40px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='40'%3E%3C!-- Básico: mochila --%3E%3Crect width='40' height='40' rx='8' fill='%232d6a4f'/%3E%3Ctext x='20' y='28' text-anchor='middle' fill='%23fff' font-size='20' font-family='Arial'%3E%F0%9F%8E%92%3C/text%3E%3C!-- Premium: estrella --%3E%3Crect x='40' width='40' height='40' rx='8' fill='%23d4a94a'/%3E%3Ctext x='60' y='28' text-anchor='middle' fill='%23fff' font-size='20' font-family='Arial'%3E%E2%AD%90%3C/text%3E%3C!-- Élite: diamante --%3E%3Crect x='80' width='40' height='40' rx='8' fill='%23111614'/%3E%3Ctext x='100' y='28' text-anchor='middle' fill='%23d4a94a' font-size='20' font-family='Arial'%3E%F0%9F%92%8E%3C/text%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: 120px 40px;
+    }
+    .sprite-basico  { background-position:   0   0; }
+    .sprite-premium { background-position: -40px  0; }
+    .sprite-elite   { background-position: -80px  0; }
 
-body {
-    font-family: var(--font-body);
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
+    .navbar { background: var(--oscuro); }
+    .navbar-brand { font-family: 'Playfair Display', serif; color: var(--miel) !important; font-size: 1.5rem; }
+    .nav-link { color: #ccc !important; transition: color .2s; }
+    .nav-link:hover, .nav-link.active { color: var(--miel) !important; }
 
-/* ===========================
-   HEADER
-=========================== */
-header {
-    background: var(--color-primary);
-    padding: 1.2rem 2rem;
-    text-align: center;
-}
+    .hero-precios {
+      background: linear-gradient(135deg, var(--oscuro) 0%, #1b4332 100%);
+      padding: 90px 0 60px;
+      text-align: center;
+      color: #fff;
+    }
+    .hero-precios h1 { font-size: clamp(2rem, 5vw, 3.5rem); color: var(--miel); }
+    .hero-precios p  { color: #a5d6a7; font-size: 1.1rem; }
 
-header h1 {
-    font-family: var(--font-display);
-    color: var(--color-accent);
-    font-size: 1.8rem;
-    letter-spacing: 2px;
-}
-
-/* ===========================
-   SECCIÓN PRINCIPAL
-=========================== */
-.precios-section {
-    max-width: 1100px;
-    margin: 3rem auto;
-    padding: 0 1.5rem;
-    flex: 1;
-}
-
-.precios-header {
-    text-align: center;
-    margin-bottom: 2.5rem;
-}
-
-.precios-header h2 {
-    font-family: var(--font-display);
-    font-size: 2.5rem;
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
-}
-
-.precios-header p {
-    color: var(--color-muted);
-    font-size: 1rem;
-    font-weight: 300;
-}
-
-/* Línea decorativa */
-.linea-decorativa {
-    width: 60px;
-    height: 3px;
-    background: var(--color-accent);
-    margin: 1rem auto;
-}
-
-/* ===========================
-   CONTENEDOR DE LA TABLA
-   Scroll horizontal en celular
-=========================== */
-.tabla-wrapper {
-    width: 100%;
-    overflow-x: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
-}
-
-/* ===========================
-   TABLA DE PRECIOS
-=========================== */
-.tabla-precios {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--color-light);
-    font-size: 0.95rem;
-    min-width: 750px; /* Evita que se aplaste en celular */
-}
-
-/* Encabezado de la tabla */
-.tabla-precios thead tr {
-    background: var(--color-primary);
-    color: var(--color-light);
-}
-
-.tabla-precios th {
-    padding: 1rem 1.2rem;
-    text-align: left;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    white-space: nowrap;
-    position: relative;
-}
-
-/* Celdas del cuerpo */
-.tabla-precios td {
-    padding: 0.9rem 1.2rem;
-    border-bottom: 1px solid var(--color-border);
-    vertical-align: middle;
-}
-
-/* ===========================
-   EFECTO HOVER EN FILAS
-   Resaltado al pasar el cursor
-=========================== */
-.tabla-precios tbody tr {
-    transition: background var(--transition), transform var(--transition);
-    cursor: default;
-}
-
-.tabla-precios tbody tr:hover {
-    background: var(--color-hover);
-    transform: scale(1.005);
-    box-shadow: 0 2px 12px rgba(26, 71, 42, 0.1);
-}
-
-/* Última fila sin borde inferior */
-.tabla-precios tbody tr:last-child td {
-    border-bottom: none;
-}
-
-/* ===========================
-   ESTILOS DE CELDAS ESPECIALES
-=========================== */
-
-/* Nombre del destino */
-.destino-nombre {
-    font-weight: 500;
-    color: var(--color-primary);
-    font-size: 1rem;
-}
-
-/* Precio destacado */
-.precio {
-    font-weight: 700;
-    color: var(--color-accent);
-    font-size: 1.05rem;
-}
-
-/* Incluido / No incluido */
-.si {
-    color: var(--color-si);
-    font-weight: 500;
-}
-
-.no {
-    color: var(--color-no);
-    font-weight: 400;
-    opacity: 0.8;
-}
-
-/* ===========================
-   BADGES DE CATEGORÍA
-=========================== */
-.badge {
-    display: inline-block;
-    padding: 0.25rem 0.7rem;
-    border-radius: 20px;
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    white-space: nowrap;
-}
-
-.badge.cultural {
-    background: #e8f0fe;
-    color: #1a56b0;
-}
-
-.badge.naturaleza {
-    background: #e8f5e9;
-    color: #1a472a;
-}
-
-.badge.playa {
-    background: #fff8e1;
-    color: #b7700a;
-}
-
-.badge.gastronomico {
-    background: #fce4ec;
-    color: #b71c50;
-}
-
-.badge.religioso {
-    background: #f3e5f5;
-    color: #6a1b9a;
-}
-
-/* ===========================
-   TOOLTIPS EXPLICATIVOS
-   Solo CSS, sin JavaScript
-=========================== */
-.tooltip {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 16px;
-    height: 16px;
-    background: rgba(255, 255, 255, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    font-size: 0.65rem;
-    font-weight: 700;
-    cursor: help;
-    margin-left: 5px;
-    position: relative;
-    vertical-align: middle;
-    transition: background var(--transition);
-}
-
-.tooltip:hover {
-    background: rgba(255, 255, 255, 0.4);
-}
-
-/* Caja del tooltip que aparece al hacer hover */
-.tooltip::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 50%;
-    transform: translateX(-50%);
-    background: #2c2c2c;
-    color: #fff;
-    font-size: 0.78rem;
-    font-weight: 400;
-    padding: 0.5rem 0.8rem;
-    border-radius: 6px;
-    width: 200px;
-    white-space: normal;
-    text-align: center;
-    line-height: 1.4;
-    z-index: 100;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity var(--transition);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Flechita del tooltip */
-.tooltip::before {
-    content: '';
-    position: absolute;
-    top: calc(100% + 3px);
-    left: 50%;
-    transform: translateX(-50%);
-    border: 5px solid transparent;
-    border-bottom-color: #2c2c2c;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity var(--transition);
-    z-index: 101;
-}
-
-/* Mostrar tooltip al hacer hover */
-.tooltip:hover::after,
-.tooltip:hover::before {
-    opacity: 1;
-}
-
-/* ===========================
-   NOTA AL PIE
-=========================== */
-.nota {
-    margin-top: 1.2rem;
-    font-size: 0.82rem;
-    color: var(--color-muted);
-    text-align: center;
-    font-style: italic;
-}
-
-/* ===========================
-   FOOTER
-=========================== */
-footer {
-    background: var(--color-primary);
-    color: rgba(255, 255, 255, 0.7);
-    text-align: center;
-    padding: 1.2rem;
-    font-size: 0.85rem;
-    margin-top: 3rem;
-}
-
-/* ===========================
-   RESPONSIVO
-   En celular la tabla tiene scroll horizontal
-=========================== */
-@media (max-width: 650px) {
-    .precios-header h2 {
-        font-size: 1.8rem;
+    .toggle-wrap {
+      display: flex; align-items: center; justify-content: center;
+      gap: 14px; margin: 36px 0 0;
+    }
+    .toggle-label { font-weight: 700; font-size: 1rem; color: var(--verde); }
+    .form-switch .form-check-input {
+      width: 3em; height: 1.6em; cursor: pointer;
+      background-color: var(--verde2); border-color: var(--verde2);
+    }
+    .badge-ahorro {
+      background: var(--miel); color: #fff;
+      border-radius: 20px; padding: 3px 10px; font-size: .78rem; font-weight: 700;
     }
 
-    .tabla-precios th,
-    .tabla-precios td {
-        padding: 0.75rem 0.9rem;
-        font-size: 0.88rem;
+    .precios-section { padding: 50px 0; }
+    .plan-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 36px 28px 30px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.07);
+      position: relative;
+      transition: transform .3s, box-shadow .3s;
+      height: 100%;
     }
-}
+    .plan-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.13);
+    }
+    .plan-card.destacado {
+      border: 3px solid var(--miel);
+      background: linear-gradient(170deg, #fff 70%, #fdf6e3 100%);
+    }
+    .badge-pop {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--miel); color: #fff;
+      border-radius: 20px; padding: 5px 18px;
+      font-size: .8rem; font-weight: 700; letter-spacing: .05em;
+      white-space: nowrap;
+    }
+    .plan-icon { margin-bottom: 14px; }
+    .plan-nombre { font-size: 1.3rem; color: var(--verde); margin-bottom: 4px; }
+    .plan-desc { font-size: .88rem; color: #777; margin-bottom: 18px; min-height: 38px; }
+    .plan-precio {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: var(--oscuro);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .plan-precio sup { font-size: 1.2rem; vertical-align: top; margin-top: 10px; }
+    .plan-precio span.periodo { font-family: 'Lato', sans-serif; font-size: .9rem; color: #999; }
+    .plan-lista {
+      list-style: none; padding: 0; margin: 20px 0;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .plan-lista li { display: flex; align-items: center; gap: 10px; font-size: .93rem; }
+    .plan-lista li i.ok  { color: var(--verde2); font-size: 1rem; }
+    .plan-lista li i.no  { color: #ccc; font-size: 1rem; }
+    .plan-lista li.off   { color: #bbb; }
+    .btn-plan {
+      display: block; width: 100%; text-align: center;
+      padding: 12px; border-radius: 10px;
+      font-weight: 700; font-size: .95rem; letter-spacing: .03em;
+      text-decoration: none; transition: background .25s, transform .15s;
+      border: none; cursor: pointer;
+    }
+    .btn-plan-verde   { background: var(--verde);  color: #fff; }
+    .btn-plan-verde:hover { background: var(--verde2); color: #fff; transform: scale(1.02); }
+    .btn-plan-miel    { background: var(--miel);   color: #fff; }
+    .btn-plan-miel:hover  { background: #c49238; color: #fff; transform: scale(1.02); }
+    .btn-plan-dark    { background: var(--oscuro); color: var(--miel); }
+    .btn-plan-dark:hover  { background: #1e1e1e; transform: scale(1.02); }
 
-/* ===========================
-   ACCESIBILIDAD
-=========================== */
-:focus-visible {
-    outline: 3px solid var(--color-accent);
-    outline-offset: 2px;
-}
-/* Asegura que el header sea sticky como en las otras páginas */
-.main-header {
-    background-color: var(--color-primary);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 1rem 0; /* Ajuste para que coincida con agencias */
-}
+    .precio-num { transition: opacity .25s; }
+    .precio-num.actualizando { opacity: 0; }
 
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
+    .tabla-section { padding: 10px 0 60px; }
+    .tabla-section h2 { color: var(--verde); }
 
-/* Estilo para los enlaces del menú en contacto */
-.nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
+    .table-precios { width: 100%; border-collapse: separate; border-spacing: 0; }
+    .table-precios thead th {
+      background: var(--verde);
+      color: #fff;
+      padding: 14px 16px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      text-align: center;
+    }
+    .table-precios thead th:first-child { text-align: left; border-radius: 10px 0 0 0; }
+    .table-precios thead th:last-child  { border-radius: 0 10px 0 0; }
+    .table-precios thead th.col-miel    { background: var(--miel); }
 
-.nav-menu a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    font-family: var(--font-body);
-}
+    .table-precios tbody tr td {
+      padding: 13px 16px;
+      border-bottom: 1px solid #eee;
+      vertical-align: middle;
+      font-size: .93rem;
+    }
+    .table-precios tbody tr td:not(:first-child) { text-align: center; }
+    .table-precios tbody tr:last-child td { border-bottom: none; }
+    .table-precios tbody tr:hover td     { background: #f0f7f3; }
+    .table-precios .check  { color: var(--verde2); font-size: 1.1rem; }
+    .table-precios .cross  { color: #ccc; font-size: 1.1rem; }
 
-.nav-menu a.active {
-    color: var(--color-accent);
-    border-bottom: 2px solid var(--color-accent);
-}
+    [data-bs-toggle="tooltip"] { cursor: help; border-bottom: 1px dashed #aaa; }
 
-/* Mega-menú Desplegable en Contacto */
-.dropdown { position: relative; }
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: white;
-    min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    top: 100%;
-    border-radius: 4px;
-}
-.dropdown:hover .dropdown-content { display: block; }
-.dropdown-content a { color: var(--color-primary) !important; padding: 10px; display: block; }
+    .faq-section { padding: 0 0 60px; }
+    .faq-section h2 { color: var(--verde); }
+    .accordion-button:not(.collapsed) { background: #e8f5e9; color: var(--verde); font-weight: 700; }
+    .accordion-button:focus { box-shadow: 0 0 0 3px rgba(64,145,108,.2); }
+
+    footer { background: var(--oscuro); color: #aaa; padding: 36px 0 18px; text-align: center; }
+    footer a { color: var(--miel); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    footer .divider { border-color: #333; margin: 18px 0; }
+
+    .fade-in { opacity: 0; transform: translateY(30px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
