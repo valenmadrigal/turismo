@@ -149,9 +149,10 @@
       background-color: var(--primary-color);
       color: white;
       text-align: center;
-      padding: 40px 20px;
-      margin-top: 50px;
-      width: 100%;
+      padding: 15px 0;
+      margin-top: 40px;
     }
+     footer p { margin: 0; font-size: 0.9rem; opacity: 0.8; }
+     
     
-    footer p { margin: 0; font-size: 0.9rem; opacity: 0.8; }
+   
