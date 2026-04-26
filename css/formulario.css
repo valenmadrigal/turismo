@@ -1,3 +1,6 @@
+/* ===========================
+   VARIABLES CSS
+=========================== */
 :root {
     --color-primary: #1a472a;
     --color-accent: #c9a84c;
@@ -14,6 +17,9 @@
     --transition: 0.3s ease;
 }
 
+/* ===========================
+   RESET BÁSICO
+=========================== */
 * {
     margin: 0;
     padding: 0;
@@ -27,7 +33,9 @@ body {
     min-height: 100vh;
 }
 
-
+/* ===========================
+   HEADER / NAVBAR
+=========================== */
 .main-header {
     background-color: var(--color-primary);
     position: sticky;
@@ -53,6 +61,7 @@ body {
     margin: 0;
 }
 
+/* Bootstrap toggler override */
 .navbar-toggler {
     border-color: rgba(255, 255, 255, 0.4);
 }
@@ -83,6 +92,7 @@ body {
     border-bottom: 2px solid var(--color-accent);
 }
 
+/* Dropdown nav */
 .dropdown { position: relative; }
 
 .dropdown-content {
@@ -104,6 +114,7 @@ body {
     display: block;
 }
 
+/* Mobile nav */
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
@@ -119,6 +130,11 @@ body {
     .nav-menu.open { display: flex; }
 }
 
+/* ===========================
+   CSS SPRITE — Redes Sociales
+   Tira de 4 íconos 40×40px → 160×40px total
+   Posiciones: FB=0, IG=-40px, TW=-80px, WA=-120px
+=========================== */
 .sprite-icon {
     display: inline-block;
     width: 36px;
@@ -136,11 +152,13 @@ body {
     opacity: .85;
 }
 
+/* Posición de cada ícono en el sprite */
 .sprite-fb { background-position:   0    0; }
 .sprite-ig { background-position: -40px  0; }
 .sprite-tw { background-position: -80px  0; }
 .sprite-wa { background-position: -120px 0; }
 
+/* Bloque redes dentro del form */
 .redes-sociales {
     grid-column: 1 / -1;
     display: flex;
@@ -160,6 +178,9 @@ body {
     margin-right: 4px;
 }
 
+/* ===========================
+   SECCIÓN PRINCIPAL
+=========================== */
 .contacto-section {
     max-width: 900px;
     margin: 3rem auto;
@@ -191,6 +212,9 @@ body {
     margin: 1rem auto;
 }
 
+/* ===========================
+   TARJETA DEL FORMULARIO
+=========================== */
 .form-card {
     background: var(--color-light);
     border: 1px solid var(--color-border);
@@ -199,6 +223,9 @@ body {
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
 
+/* ===========================
+   GRID DEL FORMULARIO
+=========================== */
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -213,6 +240,9 @@ body {
 
 .form-group.full-width { grid-column: 1 / -1; }
 
+/* ===========================
+   ETIQUETAS
+=========================== */
 label {
     font-size: 0.85rem;
     font-weight: 500;
@@ -226,6 +256,9 @@ label .requerido {
     margin-left: 2px;
 }
 
+/* ===========================
+   CAMPOS DE ENTRADA
+=========================== */
 input,
 select,
 textarea {
@@ -253,6 +286,11 @@ textarea {
     min-height: 130px;
 }
 
+/* ===========================
+   VALIDACIÓN JQUERY
+   Clases aplicadas por JS:
+   .campo-valido / .campo-invalido
+=========================== */
 input.campo-valido,
 select.campo-valido,
 textarea.campo-valido {
@@ -273,6 +311,9 @@ textarea.campo-invalido {
     padding-right: 2.5rem;
 }
 
+/* ===========================
+   MENSAJES DE ERROR jQuery
+=========================== */
 .mensaje-error {
     font-size: 0.78rem;
     color: var(--color-error);
@@ -280,14 +321,19 @@ textarea.campo-invalido {
     margin-top: 2px;
 }
 
+/* JS agrega la clase .visible para mostrarlos */
 .mensaje-error.visible { display: block; }
 
+/* Contador de caracteres del textarea */
 .char-count {
     font-size: 0.75rem;
     color: var(--color-muted);
     text-align: right;
 }
 
+/* ===========================
+   CHECKBOX
+=========================== */
 .checkbox-group {
     display: flex;
     align-items: flex-start;
@@ -315,7 +361,9 @@ textarea.campo-invalido {
 
 .checkbox-group a { color: var(--color-primary); }
 
-
+/* ===========================
+   BOTÓN ENVIAR
+=========================== */
 .btn-enviar {
     grid-column: 1 / -1;
     display: flex;
@@ -352,6 +400,10 @@ button[type="submit"]:disabled {
     cursor: not-allowed;
 }
 
+/* ===========================
+   SPINNER — Bootstrap spinner-border
+   Se muestra/oculta con la clase .activo
+=========================== */
 #spinner {
     display: none;
     color: white;
@@ -360,7 +412,9 @@ button[type="submit"]:disabled {
 
 #spinner.activo { display: inline-block; }
 
-
+/* ===========================
+   MAPA EMBEBIDO
+=========================== */
 .mapa-section {
     max-width: 900px;
     margin: 0 auto 3rem;
@@ -382,6 +436,9 @@ button[type="submit"]:disabled {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
 }
 
+/* ===========================
+   MODAL DE CONFIRMACIÓN
+=========================== */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -464,7 +521,9 @@ button[type="submit"]:disabled {
 
 .btn-cerrar:hover { background: #0f2d18; }
 
-
+/* ===========================
+   FOOTER
+=========================== */
 footer {
     background: var(--color-primary);
     color: white;
@@ -473,7 +532,9 @@ footer {
     margin-top: 2rem;
 }
 
-
+/* ===========================
+   RESPONSIVO (celular)
+=========================== */
 @media (max-width: 650px) {
     .form-card { padding: 2rem 1.2rem; }
 
@@ -489,6 +550,9 @@ footer {
     .contacto-header h2 { font-size: 1.8rem; }
 }
 
+/* ===========================
+   ACCESIBILIDAD
+=========================== */
 :focus-visible {
     outline: 3px solid var(--color-accent);
     outline-offset: 2px;

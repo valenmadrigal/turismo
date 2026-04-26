@@ -7,14 +7,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
+    <!-- Tu CSS propio -->
     <link rel="stylesheet" href="/css/formulario.css">
 </head>
 <body>
 
+<!-- ════════════════════════════════
+     NAVBAR
+════════════════════════════════ -->
+<header class="main-header">
     <nav class="nav-container">
         <div class="logo">
             <h1>✈ Turismo Argentina</h1>
@@ -41,6 +47,9 @@
     </nav>
 </header>
 
+<!-- ════════════════════════════════
+     SECCIÓN CONTACTO
+════════════════════════════════ -->
 <section class="contacto-section">
     <div class="contacto-header">
         <h2>Contactanos</h2>
@@ -52,6 +61,7 @@
         <form id="formularioContacto" novalidate>
             <div class="form-grid">
 
+                <!-- Nombre -->
                 <div class="form-group">
                     <label for="nombre">
                         <i class="bi bi-person-fill me-1"></i>Nombre <span class="requerido">*</span>
@@ -62,6 +72,7 @@
                     <span class="mensaje-error" id="err-nombre">Ingresá tu nombre (mínimo 2 caracteres, solo letras).</span>
                 </div>
 
+                <!-- Apellido -->
                 <div class="form-group">
                     <label for="apellido">
                         <i class="bi bi-person-fill me-1"></i>Apellido <span class="requerido">*</span>
@@ -72,6 +83,7 @@
                     <span class="mensaje-error" id="err-apellido">Ingresá tu apellido.</span>
                 </div>
 
+                <!-- Email -->
                 <div class="form-group">
                     <label for="email">
                         <i class="bi bi-envelope-fill me-1"></i>Email <span class="requerido">*</span>
@@ -81,6 +93,7 @@
                     <span class="mensaje-error" id="err-email">Ingresá un email válido.</span>
                 </div>
 
+                <!-- Teléfono -->
                 <div class="form-group">
                     <label for="telefono">
                         <i class="bi bi-telephone-fill me-1"></i>Teléfono
@@ -91,6 +104,7 @@
                     <span class="mensaje-error" id="err-telefono">Ingresá un teléfono válido (7-15 dígitos).</span>
                 </div>
 
+                <!-- Destino -->
                 <div class="form-group">
                     <label for="destino">
                         <i class="bi bi-geo-alt-fill me-1"></i>Destino de interés
@@ -123,6 +137,7 @@
                     </select>
                 </div>
 
+                <!-- Tipo de consulta -->
                 <div class="form-group">
                     <label for="tipo">
                         <i class="bi bi-tag-fill me-1"></i>Tipo de consulta
@@ -137,6 +152,7 @@
                     </select>
                 </div>
 
+                <!-- Mensaje -->
                 <div class="form-group full-width">
                     <label for="mensaje">
                         <i class="bi bi-chat-text-fill me-1"></i>Mensaje <span class="requerido">*</span>
@@ -149,6 +165,7 @@
                     <span class="mensaje-error" id="err-mensaje">El mensaje debe tener al menos 10 caracteres.</span>
                 </div>
 
+                <!-- Checkbox términos -->
                 <div class="checkbox-group">
                     <input type="checkbox" id="terminos" name="terminos"
                            required aria-label="Aceptar términos y condiciones">
@@ -158,6 +175,7 @@
                     </label>
                 </div>
 
+                <!-- Botón enviar -->
                 <div class="btn-enviar">
                     <button type="submit" id="btnEnviar" disabled aria-label="Enviar formulario de contacto">
                         <i class="bi bi-send-fill"></i>
@@ -167,6 +185,7 @@
                     </button>
                 </div>
 
+                <!-- CSS SPRITE — Redes Sociales -->
                 <div class="redes-sociales">
                     <span class="label-redes">Seguinos:</span>
                     <span class="sprite-icon sprite-fb" title="Facebook"  role="img" aria-label="Facebook"></span>
@@ -180,6 +199,9 @@
     </div><!-- /form-card -->
 </section>
 
+<!-- ════════════════════════════════
+     MAPA EMBEBIDO
+════════════════════════════════ -->
 <section class="mapa-section">
     <h3><i class="bi bi-map-fill me-2"></i>Dónde encontrarnos</h3>
     <div class="mapa-wrapper">
@@ -191,6 +213,9 @@
     </div>
 </section>
 
+<!-- ════════════════════════════════
+     MODAL DE CONFIRMACIÓN
+════════════════════════════════ -->
 <div class="modal-overlay" id="modal"
      role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
     <div class="modal-caja">
@@ -211,25 +236,32 @@
     </div>
 </div>
 
+<!-- ════════════════════════════════
+     FOOTER
+════════════════════════════════ -->
 <footer>
     <p>© 2026 Turismo Argentina · Todos los derechos reservados</p>
 </footer>
 
+<!-- Bootstrap 5 JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+<!-- jQuery 3 -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <script>
 $(function () {
 
+    /* ── HAMBURGER MOBILE ── */
     $('#hamburger').on('click', function () {
         $('#navMenu').toggleClass('open');
     });
 
+    /* ── SANITIZACIÓN (previene XSS) ── */
     function sanitize(str) {
         return $('<div>').text(str).html();
     }
 
+    /* ── HELPERS validación ── */
     function marcarValido($el) {
         $el.removeClass('campo-invalido').addClass('campo-valido');
         $('#err-' + $el.attr('id')).removeClass('visible');
@@ -243,6 +275,7 @@ $(function () {
         $('#err-' + $el.attr('id')).removeClass('visible');
     }
 
+    /* ── VALIDACIÓN EN TIEMPO REAL ── */
     $('#nombre').on('input', function () {
         var v = $(this).val().trim();
         var ok = v.length >= 2 && /^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$/.test(v);

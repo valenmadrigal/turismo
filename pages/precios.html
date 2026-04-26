@@ -5,16 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Precios | TurJuy</title>
 
+  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
-
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="../css/precios.css"/>
 </head>
 <body>
 
+<!-- ==============================
+     NAVBAR
+============================== -->
 <nav class="navbar navbar-expand-lg sticky-top">
   <div class="container">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="index.html">
       <i class="bi bi-compass me-1"></i>TurJuy
     </a>
     <button class="navbar-toggler" type="button"
@@ -24,7 +31,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto gap-1">
-        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Destinos</a>
           <ul class="dropdown-menu dropdown-menu-dark">
@@ -33,47 +40,61 @@
             <li><a class="dropdown-item" href="#">Yungas</a></li>
           </ul>
         </li>
-        <li class="nav-item"><a class="nav-link" href="#">Agencias</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#">Precios</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="agencias.html">Agencias</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link active" href="precios.html" aria-current="page">Precios</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
 
+<!-- ==============================
+     HERO
+============================== -->
 <section class="hero-precios">
   <div class="container">
     <h1><i class="bi bi-tags-fill me-2"></i>Planes y Precios</h1>
     <p class="mt-2">Elegí el paquete que mejor se adapte a tu viaje por Jujuy.</p>
 
+    <!-- Toggle mensual / anual -->
     <div class="toggle-wrap">
       <span class="toggle-label">Mensual</span>
       <div class="form-check form-switch mb-0">
         <input class="form-check-input" type="checkbox" id="toggleAnual" role="switch">
       </div>
-      <span class="toggle-label">Anual &nbsp;<span class="badge-ahorro">-20%</span></span>
+      <span class="toggle-label">Anual &nbsp;<span class="badge-ahorro">−20%</span></span>
     </div>
   </div>
 </section>
 
 
+<!-- ==============================
+     CARDS DE PLANES
+============================== -->
 <section class="precios-section">
   <div class="container">
     <div class="row g-4 justify-content-center">
 
-      <!-- Plan Básico -->
+      <!-- ── Plan Básico ── -->
       <div class="col-lg-4 col-md-6 fade-in">
         <div class="plan-card">
+          <!-- Icono con sprite CSS (fallback: bi icon) -->
           <div class="plan-icon">
-            <span class="sprite-plan sprite-basico" title="Plan Básico"></span>
+            <span class="sprite-plan sprite-basico" title="Plan Básico">
+              <!-- Fallback visible si no hay sprite.png -->
+              <i class="bi bi-person plan-icon-svg" style="font-size:1.8rem; color:var(--verde)"></i>
+            </span>
           </div>
+
           <h3 class="plan-nombre">Básico</h3>
           <p class="plan-desc">Para el viajero independiente que quiere lo esencial.</p>
+
           <div class="plan-precio">
-            <sup>$</sup><span class="precio-num" data-mensual="12000" data-anual="9600">12.000</span>
-            <span class="periodo"> / persona</span>
+            <sup>$</sup>
+            <span class="precio-num" data-mensual="12000" data-anual="9600">12.000</span>
+            <span class="periodo">/ persona</span>
           </div>
 
           <ul class="plan-lista">
@@ -85,25 +106,32 @@
             <li class="off"><i class="bi bi-x-circle-fill no"></i> Atención 24/7</li>
           </ul>
 
-          <button class="btn-plan btn-plan-verde" data-bs-toggle="tooltip"
-                  data-bs-placement="top" title="Ideal para viajeros individuales">
+          <button class="btn-plan btn-plan-verde"
+                  data-bs-toggle="tooltip" data-bs-placement="top"
+                  title="Ideal para viajeros individuales">
             <i class="bi bi-arrow-right-circle me-1"></i>Elegir Básico
           </button>
         </div>
       </div>
 
-      <!-- Plan Premium (DESTACADO) -->
-      <div class="col-lg-4 col-md-6 fade-in" style="transition-delay:.1s">
+      <!-- ── Plan Premium (DESTACADO) ── -->
+      <div class="col-lg-4 col-md-6 fade-in" style="transition-delay:.12s">
         <div class="plan-card destacado">
           <span class="badge-pop"><i class="bi bi-star-fill me-1"></i>Más elegido</span>
+
           <div class="plan-icon">
-            <span class="sprite-plan sprite-premium" title="Plan Premium"></span>
+            <span class="sprite-plan sprite-premium" title="Plan Premium">
+              <i class="bi bi-stars plan-icon-svg" style="font-size:1.8rem; color:var(--miel)"></i>
+            </span>
           </div>
+
           <h3 class="plan-nombre" style="color:var(--miel)">Premium</h3>
           <p class="plan-desc">La experiencia completa con alojamiento y todas las excursiones.</p>
+
           <div class="plan-precio">
-            <sup>$</sup><span class="precio-num" data-mensual="28000" data-anual="22400">28.000</span>
-            <span class="periodo"> / persona</span>
+            <sup>$</sup>
+            <span class="precio-num" data-mensual="28000" data-anual="22400">28.000</span>
+            <span class="periodo">/ persona</span>
           </div>
 
           <ul class="plan-lista">
@@ -115,24 +143,30 @@
             <li class="off"><i class="bi bi-x-circle-fill no"></i> Atención 24/7</li>
           </ul>
 
-          <button class="btn-plan btn-plan-miel" data-bs-toggle="tooltip"
-                  data-bs-placement="top" title="El paquete más popular de la temporada">
+          <button class="btn-plan btn-plan-miel"
+                  data-bs-toggle="tooltip" data-bs-placement="top"
+                  title="El paquete más popular de la temporada">
             <i class="bi bi-star me-1"></i>Elegir Premium
           </button>
         </div>
       </div>
 
-      <!-- Plan Élite -->
-      <div class="col-lg-4 col-md-6 fade-in" style="transition-delay:.2s">
+      <!-- ── Plan Élite ── -->
+      <div class="col-lg-4 col-md-6 fade-in" style="transition-delay:.24s">
         <div class="plan-card">
           <div class="plan-icon">
-            <span class="sprite-plan sprite-elite" title="Plan Élite"></span>
+            <span class="sprite-plan sprite-elite" title="Plan Élite">
+              <i class="bi bi-gem plan-icon-svg" style="font-size:1.8rem; color:var(--oscuro)"></i>
+            </span>
           </div>
+
           <h3 class="plan-nombre" style="color:var(--oscuro)">Élite</h3>
           <p class="plan-desc">Lujo, exclusividad y atención personalizada todo incluido.</p>
+
           <div class="plan-precio">
-            <sup>$</sup><span class="precio-num" data-mensual="55000" data-anual="44000">55.000</span>
-            <span class="periodo"> / persona</span>
+            <sup>$</sup>
+            <span class="precio-num" data-mensual="55000" data-anual="44000">55.000</span>
+            <span class="periodo">/ persona</span>
           </div>
 
           <ul class="plan-lista">
@@ -144,8 +178,9 @@
             <li><i class="bi bi-check-circle-fill ok"></i> Atención 24/7 dedicada</li>
           </ul>
 
-          <button class="btn-plan btn-plan-dark" data-bs-toggle="tooltip"
-                  data-bs-placement="top" title="Experiencia exclusiva para grupos privados">
+          <button class="btn-plan btn-plan-dark"
+                  data-bs-toggle="tooltip" data-bs-placement="top"
+                  title="Experiencia exclusiva para grupos privados">
             <i class="bi bi-gem me-1"></i>Elegir Élite
           </button>
         </div>
@@ -156,9 +191,14 @@
 </section>
 
 
+<!-- ==============================
+     TABLA COMPARATIVA
+============================== -->
 <section class="tabla-section">
   <div class="container fade-in">
-    <h2 class="text-center mb-4"><i class="bi bi-table me-2"></i>Comparativa de planes</h2>
+    <h2 class="text-center mb-4">
+      <i class="bi bi-table me-2"></i>Comparativa de planes
+    </h2>
 
     <div class="table-responsive">
       <table class="table-precios table table-bordered">
@@ -245,7 +285,7 @@
               </span>
             </td>
             <td><strong>$12.000</strong></td>
-            <td style="background:#fdf6e3"><strong>$28.000</strong></td>
+            <td><strong>$28.000</strong></td>
             <td><strong>$55.000</strong></td>
           </tr>
         </tbody>
@@ -260,21 +300,29 @@
 </section>
 
 
+<!-- ==============================
+     FAQ - PREGUNTAS FRECUENTES
+============================== -->
 <section class="faq-section">
   <div class="container fade-in">
-    <h2 class="text-center mb-4"><i class="bi bi-question-circle me-2"></i>Preguntas frecuentes</h2>
+    <h2 class="text-center mb-4">
+      <i class="bi bi-question-circle me-2"></i>Preguntas frecuentes
+    </h2>
+
     <div class="accordion" id="faqAcc">
 
       <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button"
-                  data-bs-toggle="collapse" data-bs-target="#faq1">
+                  data-bs-toggle="collapse" data-bs-target="#faq1"
+                  aria-expanded="false" aria-controls="faq1">
             ¿Puedo cambiar de plan después de contratar?
           </button>
         </h2>
         <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
           <div class="accordion-body">
-            Sí. Podés hacer upgrade a un plan superior en cualquier momento, abonando solo la diferencia. Los cambios a un plan inferior están sujetos a disponibilidad y a las condiciones de cancelación vigentes.
+            Sí. Podés hacer upgrade a un plan superior en cualquier momento, abonando solo la diferencia.
+            Los cambios a un plan inferior están sujetos a disponibilidad y a las condiciones de cancelación vigentes.
           </div>
         </div>
       </div>
@@ -282,7 +330,8 @@
       <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button"
-                  data-bs-toggle="collapse" data-bs-target="#faq2">
+                  data-bs-toggle="collapse" data-bs-target="#faq2"
+                  aria-expanded="false" aria-controls="faq2">
             ¿Los precios incluyen impuestos?
           </button>
         </h2>
@@ -296,13 +345,16 @@
       <div class="accordion-item border-0 mb-2 rounded-3 overflow-hidden shadow-sm">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button"
-                  data-bs-toggle="collapse" data-bs-target="#faq3">
+                  data-bs-toggle="collapse" data-bs-target="#faq3"
+                  aria-expanded="false" aria-controls="faq3">
             ¿Qué pasa si necesito cancelar mi viaje?
           </button>
         </h2>
         <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
           <div class="accordion-body">
-            Las cancelaciones con más de 15 días de anticipación reciben el 100% del reembolso. Entre 7 y 14 días, el 50%. Menos de 7 días, el reembolso no aplica salvo causas de fuerza mayor debidamente documentadas.
+            Las cancelaciones con más de 15 días de anticipación reciben el 100% del reembolso.
+            Entre 7 y 14 días, el 50%. Menos de 7 días, el reembolso no aplica salvo causas
+            de fuerza mayor debidamente documentadas.
           </div>
         </div>
       </div>
@@ -310,13 +362,16 @@
       <div class="accordion-item border-0 rounded-3 overflow-hidden shadow-sm">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button"
-                  data-bs-toggle="collapse" data-bs-target="#faq4">
+                  data-bs-toggle="collapse" data-bs-target="#faq4"
+                  aria-expanded="false" aria-controls="faq4">
             ¿Hay descuentos para grupos o estudiantes?
           </button>
         </h2>
         <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
           <div class="accordion-body">
-            Sí. Grupos de más de 10 personas tienen un 15% de descuento adicional. Estudiantes con credencial universitaria vigente obtienen un 10% en cualquier plan. Contactanos para coordinar.
+            Sí. Grupos de más de 10 personas tienen un 15% de descuento adicional.
+            Estudiantes con credencial universitaria vigente obtienen un 10% en cualquier plan.
+            Contactanos para coordinar.
           </div>
         </div>
       </div>
@@ -325,6 +380,10 @@
   </div>
 </section>
 
+
+<!-- ==============================
+     FOOTER
+============================== -->
 <footer>
   <div class="container">
     <p class="mb-1" style="color:var(--miel); font-family:'Playfair Display',serif; font-size:1.2rem">TurJuy</p>
@@ -337,23 +396,25 @@
   </div>
 </footer>
 
+
+<!-- ==============================
+     SCRIPTS
+============================== -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <script>
 $(function () {
 
- 
+  /* ── Tooltips Bootstrap ── */
   $('[data-bs-toggle="tooltip"]').each(function () {
     new bootstrap.Tooltip(this, { trigger: 'hover focus' });
   });
 
- 
+  /* ── Toggle Mensual / Anual ── */
   $('#toggleAnual').on('change', function () {
     var anual = $(this).is(':checked');
-
     $('.precio-num').addClass('actualizando');
-
     setTimeout(function () {
       $('.precio-num').each(function () {
         var val = anual
@@ -365,23 +426,29 @@ $(function () {
     }, 250);
   });
 
+  /* ── Hover dinámico en filas de tabla ── */
+  $('.table-precios tbody tr')
+    .on('mouseenter', function () {
+      $(this).find('td').css('background', '#edf7f1');
+    })
+    .on('mouseleave', function () {
+      $(this).find('td').css('background', '');
+      $(this).find('td:nth-child(3)').css('background', '#fdfaf0');
+    });
 
-  $('.table-precios tbody tr').on('mouseenter', function () {
-    $(this).find('td').css('background', '#f0f7f3');
-  }).on('mouseleave', function () {
-    $(this).find('td').css('background', '');
-    $(this).find('td:nth-child(3)').css('background', '');
-  });
-
+  /* ── Highlight columna al pasar por encabezado ── */
   $('.table-precios thead th').on('mouseenter', function () {
-    var idx = $(this).index() + 1; // nth-child es 1-based
+    var idx = $(this).index() + 1;
     $('.table-precios tbody tr td:nth-child(' + idx + ')').css({
-      'background': '#e8f5e9', 'transition': 'background .2s'
+      'background': '#e8f5e9',
+      'transition': 'background .2s'
     });
   }).on('mouseleave', function () {
     $('.table-precios tbody td').css('background', '');
+    $('.table-precios tbody td:nth-child(3)').css('background', '#fdfaf0');
   });
 
+  /* ── Feedback al elegir plan ── */
   $('.btn-plan').on('click', function () {
     var $btn = $(this);
     var original = $btn.html();
@@ -394,6 +461,7 @@ $(function () {
     }, 1000);
   });
 
+  /* ── Animación fade-in al hacer scroll ── */
   function checkVisible() {
     $('.fade-in').each(function () {
       var top = $(this).offset().top;
