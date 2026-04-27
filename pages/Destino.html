@@ -1,13 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" />
-    <link rel="stylesheet" href="/css/blogDestino.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    <title>Destinos</title>
+    <link rel="stylesheet" href="/css/Destino.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <title> Destinos </title>
 
 </head>
 <body>
@@ -18,10 +16,10 @@
     <ul class="nav-links">
       <li><a href="/pages/home.html">Inicio</a></li>
       <li><a href="/pages/Destino.html" class="active">Destinos</a></li>
+        <li><a href="/pages/blog.html">Blog</a></li>
       <li><a href="/pages/agencias.html">Agencias</a></li>
       <li><a href="/pages/precios.html">Precios</a></li>
       <li><a href="/pages/formulario.html">Contacto</a></li>
-      <li><a href="/pages/blog.html">Blog</a></li>
     </ul>
   </nav>
 </header>
@@ -43,12 +41,12 @@
 <div class="filtros-wrapper">
   <p class="filtros-titulo">Filtrar por categoría</p>
   <div class="filtros-bar">
-    <label class="filtro-label filtro-todos" for="f-todos">🗺️ Todos</label>
-    <label class="filtro-label filtro-cultural" for="f-cultural">🏛️ Cultural</label>
-    <label class="filtro-label filtro-naturaleza" for="f-naturaleza">🌿 Naturaleza</label>
-    <label class="filtro-label filtro-playa" for="f-playa">🏖️ Sol y Playa</label>
-    <label class="filtro-label filtro-gastronomico" for="f-gastronomico">🍽️ Gastronómico</label>
-    <label class="filtro-label filtro-religioso" for="f-religioso">⛪ Religioso</label>
+    <button class="filtro-btn " data-cat="todos">🗺️ Todos</button>
+    <button class="filtro-btn " data-cat="cultural">🏛️ Cultural</button>
+    <button class="filtro-btn  " data-cat="naturaleza">🌿 Naturaleza</button>
+    <button class="filtro-btn " data-cat="playa">🏖️ Sol y Playa</button>
+    <button class="filtro-btn " data-cat="gastronomico">🍽️ Gastronómico</button>
+    <button class="filtro-btn " data-cat="religioso">⛪ Religioso</button>
   </div>
 </div>
 
@@ -277,7 +275,7 @@
 <section class="tabla-section">
   <h2 class="seccion-titulo">Precios y Destinos</h2>
   <p class="seccion-subtitulo">Comparativa de paquetes disponibles. Precios por persona en temporada media.</p>
-  <div class="tabla-wrapper">
+  <div class="tabla-responsive">
     <table>
       <thead>
         <tr>
@@ -370,6 +368,30 @@
 <footer>
   <p>© 2026 TurísticaJujuy · Facultad de Ingeniería · <a href="#">UNJu</a> · Todos los derechos reservados</p>
 </footer>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+  $(".filtro-btn").click(function(){
+
+    let categoria = $(this).data("cat");
+
+    if(categoria === "todos"){
+      $(".card-destino").show();
+    } else {
+      $(".card-destino").hide();
+
+      $(".card-destino").filter(function(){
+        return $(this).data("cat") === categoria;
+      }).show();
+    }
+
+  });
+
+});
+</script>
 
 </body>
 </html>
