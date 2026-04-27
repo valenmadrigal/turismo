@@ -240,18 +240,6 @@
     /* ===== FILTROS: mostrar/ocultar artículos ===== */
     .art-card, .art-featured { display: block; }
  
-    #tag-cultural:checked   ~ .blog-main .art-card:not([data-tag~="cultural"]),
-    #tag-cultural:checked   ~ .blog-main .art-featured:not([data-tag~="cultural"]) { display: none; }
-    #tag-naturaleza:checked ~ .blog-main .art-card:not([data-tag~="naturaleza"]),
-    #tag-naturaleza:checked ~ .blog-main .art-featured:not([data-tag~="naturaleza"]) { display: none; }
-    #tag-playa:checked      ~ .blog-main .art-card:not([data-tag~="playa"]),
-    #tag-playa:checked      ~ .blog-main .art-featured:not([data-tag~="playa"]) { display: none; }
-    #tag-gastronomia:checked~ .blog-main .art-card:not([data-tag~="gastronomia"]),
-    #tag-gastronomia:checked~ .blog-main .art-featured:not([data-tag~="gastronomia"]) { display: none; }
-    #tag-aventura:checked   ~ .blog-main .art-card:not([data-tag~="aventura"]),
-    #tag-aventura:checked   ~ .blog-main .art-featured:not([data-tag~="aventura"]) { display: none; }
-    #tag-todos:checked ~ .blog-main .art-card,
-    #tag-todos:checked ~ .blog-main .art-featured { display: block; }
  
     /* ===== SIDEBAR ===== */
     .sidebar { display: flex; flex-direction: column; gap: 1.5rem; }

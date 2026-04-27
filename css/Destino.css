@@ -235,7 +235,7 @@
     #f-gastronomico:checked ~ .galeria-section .card-destino,
     #f-religioso:checked ~ .galeria-section .card-destino {
       display: none;
-    }
+      }
     /* Luego mostramos solo los correspondientes */
     #f-cultural:checked ~ .galeria-section .card-destino[data-cat="cultural"]       { display: block; }
     #f-naturaleza:checked ~ .galeria-section .card-destino[data-cat="naturaleza"]   { display: block; }

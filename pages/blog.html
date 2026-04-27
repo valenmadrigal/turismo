@@ -28,24 +28,17 @@
   <p>Historias, guías y secretos de los lugares más fascinantes para explorar.</p>
 </section>
  
-<!-- INPUTS RADIO PARA FILTROS (antes del contenido que controlan) -->
-<input type="radio" class="filtro-input" name="tag" id="tag-todos"       checked />
-<input type="radio" class="filtro-input" name="tag" id="tag-cultural"    />
-<input type="radio" class="filtro-input" name="tag" id="tag-naturaleza"  />
-<input type="radio" class="filtro-input" name="tag" id="tag-playa"       />
-<input type="radio" class="filtro-input" name="tag" id="tag-gastronomia" />
-<input type="radio" class="filtro-input" name="tag" id="tag-aventura"    />
- 
+
 <!-- TAGS / CATEGORÍAS -->
 <div class="tags-wrapper">
   <span class="tags-titulo">Categorías</span>
   <div class="tags-bar">
-    <label class="tag-label tag-todos"       for="tag-todos">📰 Todos</label>
-    <label class="tag-label tag-cultural"    for="tag-cultural">🏛️ Cultural</label>
-    <label class="tag-label tag-naturaleza"  for="tag-naturaleza">🌿 Naturaleza</label>
-    <label class="tag-label tag-playa"       for="tag-playa">🏖️ Playa</label>
-    <label class="tag-label tag-gastronomia" for="tag-gastronomia">🍽️ Gastronomía</label>
-    <label class="tag-label tag-aventura"    for="tag-aventura">🧗 Aventura</label>
+    <button class="tag-btn"       data-tag="todos">📰 Todos</button>
+    <button class="tag-btn"       data-tag="cultural">🏛️ Cultural</button>
+    <button class="tag-btn"       data-tag="naturaleza">🌿 Naturaleza</button>
+    <button class="tag-btn"       data-tag="playa">🏖️ Playa</button>
+    <button class="tag-btn"       data-tag="gastronomia">🍽️ Gastronomía</button>
+    <button class="tag-btn"       data-tag="aventura">🧗 Aventura</button>
   </div>
 </div>
  
@@ -339,6 +332,27 @@
  
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
- 
+ <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+ <script>
+$(document).ready(function(){
+
+  $(".tag-btn").click(function(){
+    
+    let categoria = $(this).data("tag");
+
+    if(categoria === "todos"){
+      $(".art-card, .art-featured").show();
+    } else {
+      $(".art-card, .art-featured").hide();
+
+      $(".art-card, .art-featured").filter(function(){
+        return $(this).data("tag").includes(categoria);
+      }).show();
+    }
+
+  });
+
+});
+</script>
 </body>
 </html>
