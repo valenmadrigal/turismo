@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog de Destinos - TurísticaJujuy</title>
+    <link rel="stylesheet" href="../css/blog.css" />
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="home.html" class="logo">Turística<span>Jujuy</span></a>
+    <ul class="nav-links">
+      <li><a href="home.html">Inicio</a></li>
+      <li><a href="Destino.html">Destinos</a></li> 
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="agencias.html">Agencias</a></li>
+      <li><a href="precios.html">Precios</a></li>
+      <li><a href="formulario.html">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+ 
+<section class="blog-hero">
+  <div class="blog-hero-tag">✦ Revista de Viajes</div>
+  <h1>Blog de <em>Destinos</em></h1>
+  <p>Historias, guías y secretos de los lugares más fascinantes para explorar.</p>
+</section>
+ 
+
+<!-- TAGS / CATEGORÍAS -->
+<div class="tags-wrapper">
+  <span class="tags-titulo">Categorías</span>
+  <div class="tags-bar">
+    <button class="tag-btn"       data-tag="todos">📰 Todos</button>
+    <button class="tag-btn"       data-tag="cultural">🏛️ Cultural</button>
+    <button class="tag-btn"       data-tag="naturaleza">🌿 Naturaleza</button>
+    <button class="tag-btn"       data-tag="playa">🏖️ Playa</button>
+    <button class="tag-btn"       data-tag="gastronomia">🍽️ Gastronomía</button>
+    <button class="tag-btn"       data-tag="aventura">🧗 Aventura</button>
+  </div>
+</div>
+ 
+<!-- CONTENIDO PRINCIPAL -->
+<div class="blog-main">
+ 
+  <!-- GRILLA DE ARTÍCULOS -->
+  <div class="articulos-grid">
+ 
+    <!-- ARTÍCULO DESTACADO -->
+    <article class="art-featured reveal" data-tag="cultural naturaleza">
+      <div class="art-img">
+        <img src="/img/quebrada.jpg" alt="Quebrada de Humahuaca" />
+      </div>
+      <div class="art-body">
+        <div class="art-tags">
+          <span class="art-tag tag-c">Cultural</span>
+          <span class="art-tag tag-n">Naturaleza</span>
+        </div>
+        <h2 class="art-titulo" style="font-size:1.6rem;">
+          <a href="#">La Quebrada de Humahuaca: viaje al corazón del norte argentino</a>
+        </h2>
+        <p class="art-excerpt">
+          Un recorrido por el valle sagrado de los Andes, sus pueblos coloridos, la magia del Cerro de los Siete Colores y los mercados artesanales que guardan siglos de historia.
+        </p>
+        <div class="art-meta">
+          <div class="avatar av-1">MG</div>
+          <div class="art-meta-info">
+            <span class="art-autor">María González</span>
+            <span>12 Abril, 2026 · 8 min lectura</span>
+          </div>
+        </div>
+        <a href="#" class="leer-mas">Leer artículo →</a>
+      </div>
+    </article>
+ 
+    <!-- ARTÍCULO 2 -->
+    <article class="art-card reveal" data-tag="naturaleza aventura">
+      <div class="art-img">
+        <img src="/img/cataratas.jpg" alt="Iguazú" />
+      </div>
+      <div class="art-body">
+        <div class="art-tags">
+          <span class="art-tag tag-n">Naturaleza</span>
+          <span class="art-tag tag-a">Aventura</span>
+        </div>
+        <h3 class="art-titulo"><a href="#">Las Cataratas del Iguazú desde adentro: la aventura de la lancha</a></h3>
+        <p class="art-excerpt">No alcanza con verlas desde el paseo. Te contamos cómo se siente cruzar en lancha bajo la Garganta del Diablo.</p>
+        <div class="art-meta">
+          <div class="avatar av-2">LR</div>
+          <div class="art-meta-info">
+            <span class="art-autor">Luis Ramírez</span>
+            <span>8 Abril · 5 min</span>
+          </div>
+        </div>
+      </div>
+    </article>
+ 
+    <!-- ARTÍCULO 3 -->
+    <article class="art-card reveal" data-tag="gastronomia cultural">
+      <div class="art-img" style="height:200px;">
+        <img src="/img/buenos aires.png" alt="Buenos Aires" />
+      </div>
+      <div class="art-body">
+        <div class="art-tags">
+          <span class="art-tag tag-g">Gastronomía</span>
+          <span class="art-tag tag-c">Cultural</span>
+        </div>
+        <h3 class="art-titulo"><a href="#">Buenos Aires: una guía gastronómica de Palermo a San Telmo</a></h3>
+        <p class="art-excerpt">De los bodegones históricos a las cocinas de autor, la capital ofrece una escena culinaria que no para de sorprender.</p>
+        <div class="art-meta">
+          <div class="avatar av-3">CP</div>
+          <div class="art-meta-info">
+            <span class="art-autor">Carla Pedraza</span>
+            <span>3 Abril · 6 min</span>
+          </div>
+        </div>
+      </div>
+    </article>
+ 
+    <!-- ARTÍCULO 4 -->
+    <article class="art-card reveal" data-tag="aventura naturaleza">
+      <div class="art-img">
+        <img src="/img/peritomoreno.jpg" alt="Perito Moreno" />
+      </div>
+      <div class="art-body">
+        <div class="art-tags">
+          <span class="art-tag tag-a">Aventura</span>
+          <span class="art-tag tag-n">Naturaleza</span>
+        </div>
+        <h3 class="art-titulo"><a href="#">Trekking sobre el hielo: 5 horas caminando el Perito Moreno</a></h3>
+        <p class="art-excerpt">Cronos y crampones: la experiencia de caminar sobre uno de los glaciares más imponentes del planeta.</p>
+        <div class="art-meta">
+          <div class="avatar av-4">JM</div>
+          <div class="art-meta-info">
+            <span class="art-autor">Javier Morales</span>
+            <span>28 Mar · 7 min</span>
+          </div>
+        </div>
+      </div>
+    </article>
+ 
+    <!-- ARTÍCULO 5 -->
+    <article class="art-card reveal" data-tag="playa naturaleza">
+      <div class="art-img" style="height:160px;">
+        <img src="/img/grutas.jpg" alt="Las Grutas" />
+      </div>
+      <div class="art-body">
+        <div class="art-tags">
+          <span class="art-tag tag-p">Playa</span>
+          <span class="art-tag tag-n">Naturaleza</span>
+        </div>
+        <h3 class="art-titulo"><a href="#">Las Grutas: por qué es el secreto mejor guardado de la Patagonia</a></h3>
+        <p class="art-excerpt">Aguas turquesas a tan solo 1.000 km de Buenos Aires. El destino playero que los argentinos repiten año tras año.</p>
+        <div class="art-meta">
+          <div class="avatar av-5">SV</div>
+          <div class="art-meta-info">
+            <span class="art-autor">Sofía Varela</span>
+            <span>20 Mar · 4 min</span>
+          </div>
+        </div>
+      </div>
+    </article>
+ 
+    <!-- ARTÍCULO 6 -->
+    <article class="art-card reveal" data-tag="gastronomia aventura">
+      <div class="art-img" style="height:220px;">
+        <img src="/img/mendoza.png" alt="Mendoza" />
+      </div>
+      <div class="art-body">
+        <div class="art-tags">
+          <span class="art-tag tag-g">Gastronomía</span>
+          <span class="art-tag tag-a">Aventura</span>
+        </div>
+        <h3 class="art-titulo"><a href="#">Mendoza en bici: recorriendo bodegas entre los Andes</a></h3>
+        <p class="art-excerpt">La combinación perfecta: pedalear entre viñedos y parar a degustar Malbec con vista a la Cordillera.</p>
+        <div class="art-meta">
+          <div class="avatar av-1">MG</div>
+          <div class="art-meta-info">
+            <span class="art-autor">María González</span>
+            <span>15 Mar · 5 min</span>
+          </div>
+        </div>
+      </div>
+    </article>
+ 
+  </div><!-- /articulos-grid -->
+ 
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+ 
+    <!-- Populares -->
+    <div class="sidebar-widget">
+      <div class="widget-titulo">Más leídos</div>
+      <div class="pop-list">
+        <div class="pop-item">
+          <div class="pop-img">
+            <img src="/img/quebrada.jpg" alt="" />
+          </div>
+          <div class="pop-info">
+            <h4>Humahuaca: guía completa para visitarla</h4>
+            <span>4.2k lecturas</span>
+          </div>
+        </div>
+        <div class="pop-item">
+          <div class="pop-img">
+            <img src="/img/cataratas.jpg" alt="" />
+          </div>
+          <div class="pop-info">
+            <h4>Cataratas: cómo ir y qué llevar</h4>
+            <span>3.8k lecturas</span>
+          </div>
+        </div>
+        <div class="pop-item">
+          <div class="pop-img">
+            <img src="/img/peritomoreno.jpg" alt="" />
+          </div>
+          <div class="pop-info">
+            <h4>Perito Moreno sin gastar una fortuna</h4>
+            <span>2.9k lecturas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Newsletter -->
+    <div class="sidebar-widget newsletter-widget">
+      <div class="widget-titulo">Newsletter</div>
+      <p>Recibí cada semana los mejores destinos, tips de viaje y ofertas exclusivas.</p>
+      <input class="nl-input" type="email" placeholder="tu@email.com" />
+      <button class="nl-btn">Suscribirme gratis</button>
+    </div>
+ 
+    <!-- Nube de tags -->
+    <div class="sidebar-widget">
+      <div class="widget-titulo">Explorar temas</div>
+      <div class="tag-cloud">
+        <a href="#" class="cloud-tag">Jujuy</a>
+        <a href="#" class="cloud-tag">Patagonia</a>
+        <a href="#" class="cloud-tag">Mochilero</a>
+        <a href="#" class="cloud-tag">Familia</a>
+        <a href="#" class="cloud-tag">Aventura</a>
+        <a href="#" class="cloud-tag">Vinos</a>
+        <a href="#" class="cloud-tag">Playas</a>
+        <a href="#" class="cloud-tag">Cultura</a>
+        <a href="#" class="cloud-tag">Trekking</a>
+        <a href="#" class="cloud-tag">Fotografía</a>
+        <a href="#" class="cloud-tag">NOA</a>
+        <a href="#" class="cloud-tag">Buenos Aires</a>
+      </div>
+    </div>
+ 
+  </aside>
+ 
+</div><!-- /blog-main -->
+ 
+<!-- SECCIÓN DE COMENTARIOS -->
+<section class="comentarios-section">
+  <h2>Comentarios de viajeros</h2>
+  <p class="sub">Lo que dice nuestra comunidad sobre sus experiencias</p>
+ 
+  <div class="comentarios-lista">
+ 
+    <div class="comentario reveal">
+      <div class="com-header">
+        <div class="com-avatar av-1">AP</div>
+        <div class="com-info">
+          <h4>Ana Pacheco</h4>
+          <span>Visitó Humahuaca · Abril 2026</span>
+        </div>
+        <div class="com-estrellas">★★★★★</div>
+      </div>
+      <p class="com-texto">Una experiencia que cambia la vida. Los colores de la Quebrada al atardecer son imposibles de describir con palabras. Volvería mil veces sin pensarlo.</p>
+    </div>
+ 
+    <div class="comentario reveal">
+      <div class="com-header">
+        <div class="com-avatar av-2">RD</div>
+        <div class="com-info">
+          <h4>Roberto Díaz</h4>
+          <span>Visitó Iguazú · Marzo 2026</span>
+        </div>
+        <div class="com-estrellas">★★★★★</div>
+      </div>
+      <p class="com-texto">La lancha bajo las Cataratas es una locura en el mejor sentido. Quedás completamente empapado y sonriendo al mismo tiempo. No te la pierdas bajo ningún concepto.</p>
+    </div>
+ 
+    <div class="comentario reveal">
+      <div class="com-header">
+        <div class="com-avatar av-3">VL</div>
+        <div class="com-info">
+          <h4>Valentina López</h4>
+          <span>Visitó Mendoza · Febrero 2026</span>
+        </div>
+        <div class="com-estrellas">★★★★☆</div>
+      </div>
+      <p class="com-texto">El tour en bici por las bodegas fue el punto alto del viaje. Los guías conocen cada rincón de los viñedos y el maridaje estuvo perfecto. Muy recomendado para parejas.</p>
+    </div>
+ 
+  </div>
+ 
+  <!-- Formulario de nuevo comentario -->
+  <div class="com-form">
+    <h3>Dejá tu comentario</h3>
+    <div class="form-row">
+      <input type="text" placeholder="Tu nombre" required minlength="2" />
+      <input type="email" placeholder="Tu email" required />
+    </div>
+    <input type="text" placeholder="¿Qué destino visitaste?" style="width:100%;margin-bottom:.8rem;" />
+    <textarea placeholder="Contá tu experiencia..."></textarea>
+    <button class="com-submit">Publicar comentario ✈️</button>
+  </div>
+ 
+</section>
+ 
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 TurísticaJujuy · Facultad de Ingeniería · <a href="#">UNJu</a> · Todos los derechos reservados</p>
+</footer>
+ 
+<!-- ===== SCROLL REVEAL con IntersectionObserver ===== -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+ 
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+ <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+ <script>
+$(document).ready(function(){
+
+  $(".tag-btn").click(function(){
+    
+    let categoria = $(this).data("tag");
+
+    if(categoria === "todos"){
+      $(".art-card, .art-featured").show();
+    } else {
+      $(".art-card, .art-featured").hide();
+
+      $(".art-card, .art-featured").filter(function(){
+        return $(this).data("tag").includes(categoria);
+      }).show();
+    }
+
+  });
+
+});
+</script>
+</body>
+</html>

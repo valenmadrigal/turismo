@@ -1,0 +1,324 @@
+
+    :root {
+      --verde:    #1D9E75;
+      --verde-claro: #E1F5EE;
+      --ocre:     #BA7517;
+      --ocre-claro: #FAEEDA;
+      --coral:    #D85A30;
+      --coral-claro: #FAECE7;
+      --azul:     #185FA5;
+      --azul-claro: #E6F1FB;
+      --lila:     #534AB7;
+      --lila-claro: #EEEDFE;
+      --text:     #1a1a1a;
+      --text-sec: #5a5a5a;
+      --bg:       #f5f3ee;
+      --white:    #ffffff;
+      --border:   rgba(0,0,0,0.10);
+      --radius:   14px;
+      --shadow:   0 4px 24px rgba(0,0,0,0.09);
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+    /* ===== HEADER / NAV ===== */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+    }
+    nav {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 900;
+      color: var(--verde);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: var(--ocre); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--text-sec);
+      font-size: 0.9rem; font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--verde); }
+    .nav-links a.active {
+      border-bottom: 2px solid var(--verde);
+      padding-bottom: 2px;
+    }
+
+    /* ===== PAGE HEADER ===== */
+    .page-hero {
+      background: linear-gradient(135deg, #0f5c3a 0%, #1D9E75 60%, #BA7517 100%);
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+    .page-hero p {
+      font-size: 1.1rem; opacity: 0.85;
+      max-width: 500px; margin: 0 auto;
+      position: relative;
+    }
+
+    /* ===== FILTROS CSS-ONLY ===== */
+    /* checkboxes ocultos */
+    .filtro-input { display: none; }
+
+    .filtros-wrapper {
+      max-width: 1200px; margin: 2.5rem auto 0;
+      padding: 0 1.5rem;
+    }
+    .filtros-titulo {
+      font-size: 0.8rem; font-weight: 500;
+      color: var(--text-sec); text-transform: uppercase;
+      letter-spacing: 1px; margin-bottom: 0.75rem;
+    }
+    .filtros-bar {
+      display: flex; gap: 0.5rem; flex-wrap: wrap;
+    }
+    .filtro-label {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.85rem; font-weight: 500;
+      cursor: pointer;
+      background: var(--white);
+      color: var(--text-sec);
+      transition: all .2s;
+      user-select: none;
+    }
+    .filtro-label:hover { border-color: var(--verde); color: var(--verde); }
+
+    /* Activar cada filtro con :checked */
+    #f-todos:checked ~ .filtros-bar .filtro-todos,
+    #f-cultural:checked ~ .filtros-bar .filtro-cultural,
+    #f-naturaleza:checked ~ .filtros-bar .filtro-naturaleza,
+    #f-playa:checked ~ .filtros-bar .filtro-playa,
+    #f-gastronomico:checked ~ .filtros-bar .filtro-gastronomico,
+    #f-religioso:checked ~ .filtros-bar .filtro-religioso {
+      background: var(--verde); color: white;
+      border-color: var(--verde);
+    }
+
+    /* ===== GALERÍA MASONRY ===== */
+    .galeria-section {
+      max-width: 1200px; margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Cards ocultas por defecto según filtro */
+    .galeria-grid {
+      columns: 3; column-gap: 1rem;
+    }
+    @media (max-width: 900px) { .galeria-grid { columns: 2; } }
+    @media (max-width: 560px) { .galeria-grid { columns: 1; } }
+
+    .card-destino {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      position: relative;
+      cursor: pointer;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .card-destino:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.16); }
+
+    /* Imagen con zoom */
+    .card-img {
+      overflow: hidden;
+      position: relative;
+    }
+    .card-img img {
+      transition: transform .5s ease;
+    }
+    .card-destino:hover .card-img img { transform: scale(1.08); }
+
+    /* Overlay con info */
+    .card-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 55%);
+      opacity: 0; transition: opacity .35s;
+      display: flex; align-items: flex-end;
+      padding: 1.25rem;
+    }
+    .card-destino:hover .card-overlay { opacity: 1; }
+    .overlay-content { color: white; }
+    .overlay-content h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; }
+    .overlay-content p { font-size: 0.82rem; opacity: 0.85; margin-top: 4px; }
+
+    /* Info debajo de la imagen */
+    .card-body {
+      padding: 1rem 1.1rem 1.2rem;
+    }
+    .card-cat {
+      display: inline-block;
+      font-size: 0.72rem; font-weight: 500;
+      text-transform: uppercase; letter-spacing: .8px;
+      padding: 3px 10px; border-radius: 999px;
+      margin-bottom: 0.5rem;
+    }
+    .card-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; margin-bottom: 0.3rem;
+    }
+    .card-body p { font-size: 0.85rem; color: var(--text-sec); line-height: 1.5; }
+    .card-precio {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 0.75rem; padding-top: 0.6rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+    .precio-val { font-weight: 700; color: var(--verde); font-size: 1rem; }
+    .precio-desde { font-size: 0.75rem; color: var(--text-sec); }
+    .btn-ver {
+      display: inline-block; padding: 5px 14px;
+      background: var(--verde); color: white;
+      border-radius: 999px; font-size: 0.78rem; font-weight: 500;
+      text-decoration: none; transition: background .2s;
+    }
+    .btn-ver:hover { background: #0f6e56; }
+
+    /* Colores de categoría */
+    .cat-cultural    { background: var(--lila-claro);   color: var(--lila); }
+    .cat-naturaleza  { background: var(--verde-claro);  color: #0f6e56; }
+    .cat-playa       { background: var(--azul-claro);   color: var(--azul); }
+    .cat-gastronomico{ background: var(--ocre-claro);   color: var(--ocre); }
+    .cat-religioso   { background: var(--coral-claro);  color: var(--coral); }
+
+    /* ===== FILTROS: mostrar/ocultar cards (CSS puro) ===== */
+    /*
+      Lógica: cuando #f-todos está checked, se muestran todas.
+      Cuando un filtro específico está activo, solo se muestran las
+      cards con data-cat correspondiente.
+    */
+
+    /* Por defecto: todos visibles */
+    .card-destino { display: block; }
+
+    /* Cuando se activa un filtro específico, ocultamos todo */
+    #f-cultural:checked ~ .galeria-section .card-destino,
+    #f-naturaleza:checked ~ .galeria-section .card-destino,
+    #f-playa:checked ~ .galeria-section .card-destino,
+    #f-gastronomico:checked ~ .galeria-section .card-destino,
+    #f-religioso:checked ~ .galeria-section .card-destino {
+      display: none;
+      }
+    /* Luego mostramos solo los correspondientes */
+    #f-cultural:checked ~ .galeria-section .card-destino[data-cat="cultural"]       { display: block; }
+    #f-naturaleza:checked ~ .galeria-section .card-destino[data-cat="naturaleza"]   { display: block; }
+    #f-playa:checked ~ .galeria-section .card-destino[data-cat="playa"]             { display: block; }
+    #f-gastronomico:checked ~ .galeria-section .card-destino[data-cat="gastronomico"]{ display: block; }
+    #f-religioso:checked ~ .galeria-section .card-destino[data-cat="religioso"]     { display: block; }
+    /* Todos: todos visibles (anula lo anterior) */
+    #f-todos:checked ~ .galeria-section .card-destino { display: block; }
+
+    /* ===== TABLA RESPONSIVA ===== */
+    .tabla-section {
+      max-width: 1200px; margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    .seccion-titulo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; font-weight: 900;
+      margin-bottom: 0.4rem;
+    }
+    .seccion-subtitulo {
+      color: var(--text-sec); font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .tabla-wrapper {
+      overflow-x: auto;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: var(--white);
+    }
+    table {
+      width: 100%; border-collapse: collapse;
+      min-width: 560px;
+    }
+    thead { background: var(--verde); color: white; }
+    thead th {
+      padding: 14px 18px; text-align: left;
+      font-size: 0.85rem; font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+    tbody tr { border-bottom: 1px solid var(--border); transition: background .2s; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: var(--verde-claro); }
+    tbody td {
+      padding: 13px 18px; font-size: 0.9rem;
+    }
+    .badge-tabla {
+      display: inline-block; padding: 3px 10px;
+      border-radius: 999px; font-size: 0.75rem; font-weight: 500;
+    }
+    .precio-td { font-weight: 700; color: var(--verde); }
+    .estrellas { color: #e8a020; font-size: 0.85rem; }
+
+    /* ===== FOOTER SIMPLE ===== */
+    footer {
+      background: #0f1a14;
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      margin-top: 4rem;
+    }
+    footer a { color: var(--verde); text-decoration: none; }
+
+    /* ===== ANIMACIÓN ENTRADA ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .card-destino {
+      animation: fadeUp .45s ease both;
+    }
+    .card-destino:nth-child(2) { animation-delay: .08s; }
+    .card-destino:nth-child(3) { animation-delay: .16s; }
+    .card-destino:nth-child(4) { animation-delay: .24s; }
+    .card-destino:nth-child(5) { animation-delay: .32s; }
+    .card-destino:nth-child(6) { animation-delay: .40s; }
+    .card-destino:nth-child(7) { animation-delay: .48s; }
+    .card-destino:nth-child(8) { animation-delay: .56s; }
+    .card-destino:nth-child(9) { animation-delay: .64s; }
+
+    /* ===== RESPONSIVE NAV ===== */
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .page-hero { padding: 2.5rem 1.2rem 2rem; }
+    }
+  
