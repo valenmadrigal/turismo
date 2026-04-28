@@ -3,29 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <title>Agencia de Viajes</title>
-<link rel=" icon" href="/img/logo.png">
+<link rel="icon" href="/img/logo.png">
 <link rel="stylesheet" href="/css/home.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
 <body>
 
-<!-- HEADER -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Turismo Argentina</a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Destinos</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/pages/Destino.html">Buenos Aires</a></li>
+            <li><a class="dropdown-item" href="/pages/Destino.html">Norte</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="/pages/blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="/pages/agencias.html">Agencias</a></li>
+        <li class="nav-item"><a class="nav-link" href="/pages/precios.html">Precios</a></li>
+        <li class="nav-item"><a class="nav-link" href="/pages/formulario.html">Contacto</a></li>
+
+      </ul>
+    </div>
+  </div>
+
+
 <header>
 <h2>turismo argentina</h2>
 <nav>
 <ul>
 <li class="menu-item">
-<a href="/pages/blogDestino.html">Destinos</a>
+<a href="/pages/Destino.html">Destinos</a>
 <div class="mega-menu">
 </div>
 </li>
-
+<li><a href="/pages/blog.html">Blog</a></li>
 <li><a href="/pages/agencias.html">Agencias</a></li>
 <li><a href="/pages/precios.html">Precios</a></li>
 <li><a href="/pages/formulario.html">Contacto</a></li>
 </ul>
-</nav>
-</header>
 
-<!-- HERO -->
+</nav>
+
 <section class="hero">
 <video autoplay muted loop>
 <source src="https://prod-streaming-video-msn-com.akamaized.net/v1/eus005/d9f87338-cc14-4857-bae2-ffb0bd91cb09/75655155-0f0d-4502-9fc1-6d635b5086ef_18000.mp4">
@@ -37,42 +66,86 @@
 </div>
 </section>
 
-<!-- DESTINOS -->
-<section class="cards">
+
+<section class="cards container mt-5">
+<div class="row">
+
+<div class="col-md-4">
 <div class="card">
 <img src="https://th.bing.com/th/id/R.01ae5a7b407503904b53ac6f47d667be?rik=LZFDIIg1u4%2bhDA&riu=http%3a%2f%2fwww.getsready.com%2fwp-content%2fuploads%2f2016%2f10%2fthe-city-center-of-Buenos-Aires.jpg&ehk=NdLDX1wkPCVSfYUlz01QvCEETd5xMcym0qGYHgZ3egI%3d&risl=&pid=ImgRaw&r=0">
 <h3>Buenos Aires</h3>
 <p>Playas turisticas</p>
 </div>
+</div>
 
+<div class="col-md-4">
 <div class="card">
 <img src="https://tse1.mm.bing.net/th/id/OIP.AQiWnGbMcoRxFid9kU6vuAHaFS?rs=1&pid=ImgDetMain&o=7&rm=3">
 <h3>Norte Argentino</h3>
 <p>Calor y paisajes</p>
 </div>
+</div>
 
+<div class="col-md-4">
 <div class="card">
 <img src="https://2.bp.blogspot.com/-Js4fIhsD5Jc/VGv7iSQO_bI/AAAAAAAAApA/GefFEoI_QBQ/s1600/Sin-t%C3%ADtulo-1.jpg">
 <h3>y mucho más</h3>
 <p>Historia y cultura</p>
 </div>
-</section>
+</div>
 
-<!-- CONTADOR -->
-<section class="contador">
-500+ viajeros felices
-</section>
-
-<!-- TESTIMONIOS -->
-<section class="testimonios">
-<div class="slider">
-<div class="slide">"El mejor viaje de mi vida"</div>
-<div class="slide">"Excelente atención"</div>
-<div class="slide">"Todo perfecto, volvería a elegirlos"</div>
 </div>
 </section>
 
-<!-- FOOTER -->
+
+<section class="contador text-center">
+<h2 id="contador">0</h2>
+<p>viajeros felices</p>
+</section>
+
+<section class="container mt-5">
+<div id="carouselTestimonios" class="carousel slide" data-bs-ride="carousel">
+
+<div class="carousel-inner text-center">
+
+<div class="carousel-item active">
+<p>"El mejor viaje de mi vida"</p>
+</div>
+
+<div class="carousel-item">
+<p>"Excelente atención"</p>
+</div>
+
+<div class="carousel-item">
+<p>"Todo perfecto, volvería a elegirlos"</p>
+</div>
+
+</div>
+
+<button class="carousel-control-prev" data-bs-target="#carouselTestimonios" data-bs-slide="prev">
+<span class="carousel-control-prev-icon"></span>
+</button>
+
+<button class="carousel-control-next" data-bs-target="#carouselTestimonios" data-bs-slide="next">
+<span class="carousel-control-next-icon"></span>
+</button>
+
+</div>
+</section>
+
+
+
+<!-- 👇 ACA VA EL PHISHING -->
+
+<section class="phishing text-center">
+  <h2>Seguridad en Internet</h2>
+  <p>Aprendé a detectar fraudes online</p>
+
+  <button data-bs-toggle="modal" data-bs-target="#phishingModal">
+    Simulación de phishing
+  </button>
+</section>
+
 <footer>
 <div class="footer-container">
 
@@ -91,12 +164,116 @@
 
 </div>
 
-<iframe 
-src="https://www.openstreetmap.org/export/embed.html"
-width="100%" height="200">
-</iframe>
+<iframe src="https://www.openstreetmap.org/export/embed.html"></iframe>
 
 </footer>
+ <!-- MODAL PHISHING -->
+<div class="modal fade" id="phishingModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5>⚠️ Simulación de Phishing</h5>
+      </div>
+
+      <div class="modal-body">
+
+        <p><strong>Esto es una simulación educativa.</strong></p>
+
+        <input type="text" placeholder="Usuario" class="form-control mb-2">
+        <input type="password" placeholder="Contraseña" class="form-control mb-2">
+
+        <button type="button" id="verificar" class="btn btn-primary">
+  Ingresar
+</button>
+      
+
+        <hr>
+
+        <p>Errores:</p>
+        <ul>
+          <li>Pedido de contraseña</li>
+          <li>Mensaje urgente</li>
+          <li>Sitio falso</li>
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="phishingModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>⚠️ Simulación de Phishing</h5>
+      </div>
+      <div class="modal-body">
+
+        <p><strong>Esto es una simulación educativa.</strong></p>
+
+        <input type="text" placeholder="Usuario" class="form-control mb-2">
+        <input type="password" placeholder="Contraseña" class="form-control mb-2">
+
+        <button type="button" id="verificar" class="btn btn-primary">
+          Ingresar
+        </button>
+
+        <hr>
+
+        <p>Errores:</p>
+        <ul>
+          <li>Pedido de contraseña</li>
+          <li>Mensaje urgente</li>
+          <li>Sitio falso</li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+  
+  $('.hero-text').hide().fadeIn(2000);
+
+ 
+  let count = 0;
+  let target = 500;
+
+  let intervalo = setInterval(function(){
+    count++;
+    $('#contador').text(count + "+");
+
+    if(count >= target){
+      clearInterval(intervalo);
+    }
+  }, 10);
+
+  
+  $('#verificar').click(function(){
+    alert("⚠️ Era una simulación. Nunca ingreses tus datos en sitios sospechosos.");
+  });
+
+});
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ <script>
+ $('#verificar').click(function(){
+  alert("⚠️ Era una simulación. Nunca ingreses tus datos en sitios sospechosos.");
+});
+</script>
 
 </body>
 </html>
